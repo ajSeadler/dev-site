@@ -111,7 +111,7 @@ function HeroSection() {
         </div>
       </div>
 
-      <Projects />
+      
     </>
   );
 }

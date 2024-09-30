@@ -39,27 +39,39 @@
   padding: 0px;
 }
 
-/* Image container styling */
-.image-container-projects {
-  display: flex;
-  flex-direction: column; /* Stack images and texts vertically */
-  align-items: center; /* Center images */
-  width: 50%; /* Full width for the container */
+.second-project-text {
+  width: 100%;
+  padding: 5px;
 }
 
+.image-container-projects {
+  display: flex;  /* Changed to flex to arrange images in a row */
+  flex-direction: row; /* Set direction to row */
+  align-items: flex-start; /* Align images to the top */
+  justify-content: space-around; /* Distribute space evenly between items */
+  width: 100%; /* Full width for the container */
+  flex-wrap: wrap; /* Allow wrapping to the next line on smaller screens */
+}
+
+/* Project wrapper styling */
 .project-wrapper {
   display: flex;
-  flex-direction: column; /* Switch to row layout */
-  align-items: center; /* Align items to the top */
-  margin-bottom: 20px;
-  width: 100%;
-  justify-content: space-between;
+  flex-direction: column; /* Keep the text below images in column layout */
+  align-items: center; /* Center items */
+  margin: 10px; /* Reduced margin for better spacing in row layout */
+  width: 30%; /* Set a specific width to allow 3 items in a row */
 }
 
 
 
 
 .project-image img {
+  width: auto; /* Maintain aspect ratio */
+  height: 600px; /* Set a fixed height */
+  
+}
+
+.second-project-image img {
   width: auto; /* Maintain aspect ratio */
   height: 600px; /* Set a fixed height */
   
@@ -75,8 +87,16 @@
   flex-direction: column; /* Stack title and text */
   justify-content: center; /* Center vertically */
   width: 50%; /* Full width for text */
- 
   border-radius: 10px; /* Rounded corners for the text container */
+ 
+}
+
+.second-text-container-projects {
+  display: flex;
+  flex-direction: column; /* Stack title and text */
+  justify-content: center; /* Center vertically */
+  width: 100%; /* Full width for text */
+  margin: 3%;
  
 }
 
@@ -84,6 +104,17 @@
 .project-info-card {
   
   border-radius: 10px;
+  padding: 30px; /* Increased padding for larger card */
+  max-width: 50%; /* Set maximum width for the card */
+  margin: auto; /* Center the card */
+  color: #fff; /* Adjust text color to stand out */
+}
+
+/* Info card styling */
+.second-project-info-card {
+  
+  border-radius: 10px;
+  margin-top: 10% !important;
   padding: 30px; /* Increased padding for larger card */
   max-width: 50%; /* Set maximum width for the card */
   margin: auto; /* Center the card */
@@ -131,7 +162,12 @@
   }
 
   .image-container-projects {
-    width: 350px; /* Stretch images to full width */
+    flex-direction: column; /* Stack images vertically on smaller screens */
+    align-items: center; /* Center images on smaller screens */
+  }
+
+  .project-wrapper {
+    width: 100%; /* Full width for each project wrapper on mobile */
   }
 
   .project-image img {
@@ -159,4 +195,15 @@
   .text-container-projects {
     width: 75%;
   }
+  .second-project-info-card {
+    max-width: 100%; /* Expand card width on mobile */
+    padding: 20px; /* Adjust padding for mobile */
+  }
+
+  .second-project-image img {
+    height: 16rem;
+    width: auto;
+    margin: auto !important;
+  }
+
 }

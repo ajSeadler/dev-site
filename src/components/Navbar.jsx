@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';  // Importing motion from framer-motion
+import { motion } from 'framer-motion';
 import '../styles/Navbar.css';
 
 const Navbar = () => {
@@ -25,7 +25,7 @@ const Navbar = () => {
         morph: {
             scaleX: 8,
             scaleY: 0.5,
-            transition: { duration: .5, ease: 'easeInOut' },
+            transition: { duration: 0.5, ease: 'easeInOut' },
         },
     };
 
@@ -36,7 +36,21 @@ const Navbar = () => {
 
     const navbarVariant = {
         hidden: { opacity: 0, y: -50 },
-        visible: { opacity: 1, y: 0, transition: { delay: .5, duration: 0.5 } }
+        visible: { opacity: 1, y: 0, transition: { delay: 0.5, duration: 0.5 } }
+    };
+
+    const handleScroll = (e) => {
+        e.preventDefault();
+        const targetId = e.currentTarget.getAttribute("href");
+        const targetElement = document.querySelector(targetId);
+        
+        if (targetElement) {
+            targetElement.scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        if (isOpen) {
+            setIsOpen(false); // Close the menu if it's open
+        }
     };
 
     return (
@@ -65,11 +79,11 @@ const Navbar = () => {
                     >
                         <div className="navbar-brand">AJ<span className='last-name'>Seadler</span></div>
                         <ul className="navbar-links">
-                            <li><a href="#about">About</a></li>
-                            <li><a href="#projects">Projects</a></li>
-                            <li><a href="#skills">Skills</a></li>
-                            <li><a href="#contact">Contact</a></li>
-                            <li><a href="#resume">Resume</a></li>
+                            <li><a href="#about" onClick={handleScroll}>About</a></li>
+                            <li><a href="#projects" onClick={handleScroll}>Projects</a></li>
+                            <li><a href="#skills" onClick={handleScroll}>Skills</a></li>
+                            <li><a href="#contact" onClick={handleScroll}>Contact</a></li>
+                            <li><a href="#resume" onClick={handleScroll}>Resume</a></li>
                         </ul>
                     </motion.nav>
 
@@ -88,11 +102,11 @@ const Navbar = () => {
                         </div>
                         {isOpen && (
                             <ul className="navbar-links">
-                                <li><a href="#about">About</a></li>
-                                <li><a href="#projects">Projects</a></li>
-                                <li><a href="#skills">Skills</a></li>
-                                <li><a href="#contact">Contact</a></li>
-                                <li><a href="#resume">Resume</a></li>
+                                <li><a href="#about" onClick={handleScroll}>About</a></li>
+                                <li><a href="#projects" onClick={handleScroll}>Projects</a></li>
+                                <li><a href="#skills" onClick={handleScroll}>Skills</a></li>
+                                <li><a href="#contact" onClick={handleScroll}>Contact</a></li>
+                                <li><a href="#resume" onClick={handleScroll}>Resume</a></li>
                             </ul>
                         )}
                     </motion.nav>
