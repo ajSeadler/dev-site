@@ -10,18 +10,19 @@ function Projects() {
         <p className="project-description">
         The Circle of Fifths Viewer is a web application I developed to help users visualize and understand the relationships between musical keys. This interactive tool features an intuitive interface that allows users to explore the Circle of Fifths, view chord progressions within the key they choose, and easily transpose music between different keys. Built with <span className="highlight">JavaScript</span>, <span className="highlight">React</span>, and <span className="highlight">CSS</span>, this project showcases my skills in front-end development and my passion for music theory.
         </p>
-        <a href="#more-info" className="project-link">View More</a>
+        <a href="https://circleoffifthsviewer.com" className="project-link" target="_blank" rel="noopener noreferrer">View Site</a>
+
       </div>
       <div className="image-container-projects">
         {/* First Project */}
         <div className="project-wrapper">
           <div className="project-image">
-            <img src="/2.png" alt="Project Screenshot 1" />
+            <img src="/2.png" alt="Home Page" />
           </div>
           <div className="text-container-projects">
-            <h3 className="project-subtitle">Project Overview</h3>
+            <h3 className="project-subtitle">Easy Navigation</h3>
             <p className="project-text">
-              A brief overview of the project, highlighting its main features and technologies used.
+            The homepage offers a simple and intuitive layout, allowing users to quickly explore the Circle of Fifths and access features.
             </p>
           </div>
         </div>
@@ -29,12 +30,12 @@ function Projects() {
         {/* Second Project */}
         <div className="project-wrapper">
           <div className="project-image">
-            <img src="/3.png" alt="Project Screenshot 2" />
+            <img src="/3.png" alt="Scale Selection" />
           </div>
           <div className="text-container">
-            <h3 className="project-subtitle">Key Features</h3>
+            <h3 className="project-subtitle">Circle of Fifths & Scale Selection</h3>
             <p className="project-text">
-              Discuss key features of the project that make it stand out, including integrations and usability.
+            Users can interact with the Circle of Fifths chart to select a key and corresponding scale, providing an educational tool for exploring music theory.
             </p>
           </div>
         </div>
@@ -42,12 +43,12 @@ function Projects() {
         {/* Third Project */}
         <div className="project-wrapper">
           <div className="project-image">
-            <img src="/4.png" alt="Project Screenshot 3" />
+            <img src="/4.png" alt="Scale Display" />
           </div>
           <div className="text-container">
-            <h3 className="project-subtitle">Additional Information</h3>
+            <h3 className="project-subtitle">Chord & Interval Display</h3>
             <p className="project-text">
-              Further insights about the project, such as challenges faced and lessons learned.
+            Based on the selected key and scale, the app displays chords and intervals, giving users a detailed breakdown of musical components.
             </p>
           </div>
         </div>

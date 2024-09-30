@@ -14,29 +14,39 @@
   padding: 4rem 4rem; /* Padding for the section */
 }
 
+.project-text {
+  width: 100%;
+  padding: 0px;
+}
+
 /* Image container styling */
 .image-container-projects {
   display: flex;
   flex-direction: column; /* Stack images and texts vertically */
   align-items: center; /* Center images */
-  width: 500px; /* Full width for the container */
+  width: 50%; /* Full width for the container */
 }
 
-/* Project image styling */
-.project-image {
+.project-wrapper {
+  display: flex;
+  flex-direction: row; /* Switch to row layout */
+  align-items: center; /* Align items to the top */
+  margin-bottom: 20px;
   width: 100%;
-  margin: 0px 0; /* Spacing between project images */
+  justify-content: space-between;
 }
+
+
+
 
 .project-image img {
-  width: 100%; /* Make image responsive */
-  height: auto !important;
-  transition: none; /* Disable any transition effects */
+  width: auto; /* Maintain aspect ratio */
+  height: 600px; /* Set a fixed height */
+  
 }
 
-.project-image:hover img {
-  transform: none; /* Prevent scaling on hover */
-}
+
+
 
 
 /* Text container styling */
@@ -45,10 +55,9 @@
   flex-direction: column; /* Stack title and text */
   justify-content: center; /* Center vertically */
   width: 100%; /* Full width for text */
-  padding: 10px; /* Added padding for inner spacing */
+ 
   border-radius: 10px; /* Rounded corners for the text container */
-  
-  margin-bottom: 20px; /* Spacing below text */
+ 
 }
 
 /* Info card styling */
@@ -102,8 +111,9 @@
     width: 350px; /* Stretch images to full width */
   }
 
-  .project-image {
-    margin: 10px 0; /* Reduced spacing between project images */
+  .project-image img {
+    height: 400px;
+
   }
 
   .project-info-card {

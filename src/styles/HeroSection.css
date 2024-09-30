@@ -9,7 +9,7 @@
   align-items: start;
 }
 
-.text-container {
+.text-container-hero {
   max-width: 600px;
   padding: 0 1rem; /* Added padding for smaller screens */
   text-align: left;
@@ -110,7 +110,7 @@
     margin-top: -20px; /* Move up slightly */
   }
 
-  .text-container {
+  .text-container-hero {
     max-width: 100%; /* Allow more space on mobile */
     padding: 0 1rem; /* Added padding */
   }

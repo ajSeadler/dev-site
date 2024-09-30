@@ -6,7 +6,7 @@ function HeroSection() {
   return (
     <>
     <div className="hero-section">
-      <div className="text-container">
+      <div className="text-container-hero">
         <h2 className="greeting">Welcome! I am</h2>
         <h1 className="name">Anthony Seadler</h1>
         <h3 className="job-title">
