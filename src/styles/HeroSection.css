@@ -1,0 +1,54 @@
+.hero-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 50px 50px;
+  height: 100vh;
+  color: white;
+
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite; /* Animated gradient */
+}
+
+.text-container {
+  max-width: 600px;
+}
+
+.greeting {
+  font-size: 2rem;
+  font-weight: 300;
+  transition: color 0.3s ease; /* Transition for hover */
+}
+
+.name {
+  font-size: 4rem;
+  font-weight: bold;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7); /* Text shadow */
+}
+
+.job-title {
+  font-size: 2rem;
+  font-weight: 400;
+  transition: color 0.3s ease; /* Transition for hover */
+}
+
+.description {
+  font-size: 1.2rem;
+  line-height: 1.5;
+  margin-top: 20px;
+}
+
+.image-container {
+  max-width: 400px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Shadow effect */
+  transition: transform 0.3s; /* Transition for hover */
+}
+
+.image-container:hover {
+  transform: scale(1.05); /* Scale effect on hover */
+}
+
+.profile-image {
+  width: 100%;
+  border-radius: 20px; /* More rounded corners */
+}
