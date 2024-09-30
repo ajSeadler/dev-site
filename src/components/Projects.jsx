@@ -146,12 +146,12 @@ function Projects() {
           <div className="second-project-image">
             <img src="/disco-stranger-site.png" alt="Disco Stranger Site" />
           </div>
-          <div className="second-text-container-projects">
+          {/* <div className="second-text-container-projects">
             <h3 className="project-subtitle">Immersive Experience</h3>
             <p className="second-project-text">
               The project brings a unique blend of music, visuals, and interaction, creating a rich user experience designed to engage and entertain.
             </p>
-          </div>
+          </div> */}
         </motion.div>
       </div>
     </div>

@@ -58,6 +58,33 @@
   transition: transform 0.3s ease; /* Smooth transition for scaling */
 }
 
+.glow {
+  position: absolute; /* Position glow behind the image */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: -1 !important;
+  height: 100%;
+  border-radius: 20px; /* Match the image's border radius */
+  background-color: rgba(80, 200, 120, 0.7); /* Sleek color for glow */
+  filter: blur(15px); /* Add blur for glowing effect */
+  z-index: 0; /* Set behind the image */
+  animation: pulse 5s infinite; /* Optional: add a pulsing effect */
+}
+
+/* Optional pulsing effect */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
 .scroll-indicator {
   display: flex;
   flex-direction: column;

@@ -87,6 +87,8 @@ function HeroSection() {
           initial="hidden"
           animate="visible"
         >
+          {/* Glow effect behind the image */}
+          <div className="glow"></div>
           <img src="portrait.jpg" alt="Anthony Seadler" className="profile-image" />
         </motion.div>
 
@@ -110,8 +112,6 @@ function HeroSection() {
           <p className="scroll-text">Scroll Down</p>
         </div>
       </div>
-
-      
     </>
   );
 }
