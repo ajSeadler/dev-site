@@ -1,0 +1,107 @@
+/* Common Styles */
+.navbar {
+  width: 100%;
+  z-index: 10;
+  transition: background-color 0.3s ease;
+}
+
+.navbar-brand {
+  color: blanchedalmond; /* Original color */
+  font-weight: thin;
+}
+
+.last-name {
+  font-weight: bold;
+}
+
+/* Desktop Navbar */
+.desktop-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3rem;
+}
+
+
+
+.desktop-navbar .navbar-links {
+  list-style: none;
+  display: flex; /* Horizontal layout for desktop */
+  gap: 5rem;
+}
+
+.desktop-navbar .navbar-links a {
+  text-decoration: none;
+  color: blanchedalmond; /* Original color */
+  font-weight: thin; /* Font weight for links */
+  transition: color 0.3s ease;
+}
+
+.desktop-navbar .navbar-links a:hover {
+  color: rgb(209, 149, 255); /* Slight color change on hover */
+}
+
+/* Mobile Navbar */
+.mobile-navbar {
+  display: none; /* Hide mobile navbar by default */
+}
+
+/* Hamburger Menu */
+.navbar-hamburger {
+  display: none; /* Hide hamburger menu by default */
+  flex-direction: column;
+  cursor: pointer;
+  padding: 10px;
+  align-items: flex-end; /* Align hamburger icon to the right */
+}
+
+.bar {
+  width: 30px;
+  height: 3px;
+  background-color: blanchedalmond; /* Original color */
+  margin: 4px 0;
+  transition: background-color 0.3s ease;
+}
+
+/* Show active state for bars */
+.bar.active {
+  background-color: rgb(209, 149, 255); /* Change color when active */
+}
+
+/* Mobile Links */
+.mobile-navbar .navbar-links {
+  list-style: none;
+  display: flex; /* Show links when open */
+  flex-direction: column; /* Vertical layout for mobile */
+  position: absolute;
+  top: 60px; /* Positioning below navbar */
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.9); /* Dark background for dropdown */
+  width: 100%; /* Full width */
+  padding: 20px 0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Shadow effect */
+  z-index: 5;
+}
+
+/* Show mobile navbar on smaller screens */
+@media (max-width: 768px) {
+  .desktop-navbar {
+      display: none; /* Hide desktop navbar on mobile */
+  }
+
+  .mobile-navbar {
+      display: flex; /* Show mobile navbar */
+      align-items: center;
+      padding: 15px; /* Padding for mobile */
+      justify-content: space-between; /* Space between brand and hamburger */
+  }
+
+  .navbar-hamburger {
+      display: flex; /* Show hamburger menu on mobile */
+  }
+
+  .navbar-links li {
+      margin: 10px 0; /* Spacing between links */
+      text-align: center; /* Center the text in the dropdown */
+  }
+}

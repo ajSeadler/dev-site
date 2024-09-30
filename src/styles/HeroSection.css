@@ -1,54 +1,156 @@
 .hero-section {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 50px 50px;
-  height: 100vh;
-  color: white;
-
-  background-size: 400% 400%;
-  animation: gradient 15s ease infinite; /* Animated gradient */
+  position: relative;
+  width: 100%;
+  max-height: 100%;
+  height: 100vh; /* Allow dynamic height */
+  padding: 8rem 3rem 5rem;
+  display: grid;
+  grid-template-columns: 1fr minmax(min-content, 45%);
+  align-items: start;
 }
 
 .text-container {
   max-width: 600px;
+  padding: 0 1rem; /* Added padding for smaller screens */
+  text-align: left;
 }
 
 .greeting {
-  font-size: 2rem;
-  font-weight: 300;
+  font-size: 2.5rem; /* Base font size */
+  font-weight: 300; /* Light weight for a clean look */
+  color: blanchedalmond;
   transition: color 0.3s ease; /* Transition for hover */
 }
 
 .name {
-  font-size: 4rem;
-  font-weight: bold;
-  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7); /* Text shadow */
+  font-size: 4rem; /* Base font size */
+  font-weight: 200; /* Lighter weight for simplicity */
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5); /* Softer shadow */
 }
 
 .job-title {
-  font-size: 2rem;
-  font-weight: 400;
-  transition: color 0.3s ease; /* Transition for hover */
+  font-size: 2.2rem; /* Base font size */
+  font-weight: 300; /* Light weight for a clean look */
+  text-decoration: underline;
+  color: #CEFF1A;
+  transition: color 0.3s ease; /* Transition effect */
+}
+
+.job-title:hover {
+  color: rgba(209, 149, 255, 0.8); /* Slight color change on hover */
 }
 
 .description {
-  font-size: 1.2rem;
+  font-size: 1.4rem; /* Base font size */
   line-height: 1.5;
   margin-top: 20px;
+  color: #f0f0f0; /* Slightly muted color for readability */
 }
 
 .image-container {
-  max-width: 400px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Shadow effect */
-  transition: transform 0.3s; /* Transition for hover */
-}
-
-.image-container:hover {
-  transform: scale(1.05); /* Scale effect on hover */
+  max-width: 500px;
+  margin: 0 auto; /* Center the image on smaller screens */
 }
 
 .profile-image {
   width: 100%;
   border-radius: 20px; /* More rounded corners */
+  transition: transform 0.3s ease; /* Smooth transition for scaling */
+}
+
+.scroll-indicator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute; /* Position it at the bottom center */
+  bottom: 20%; /* Distance from the bottom */
+  left: 50%;
+  transform: translateX(-50%);
+  color: white; /* Change text color as needed */
+  opacity: 0.8; /* Slight transparency */
+}
+
+.scroll-arrow {
+  animation: bounce 1s infinite; /* Bouncing effect */
+  margin-bottom: 5px; /* Space between arrow and text */
+}
+
+/* Bouncing animation */
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+.scroll-text {
+  font-size: 1rem; /* Adjust size as needed */
+  text-align: center;
+}
+
+
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+
+  .scroll-indicator {
+    display: none;
+  }
+
+  .hero-section {
+    grid-template-columns: 1fr; /* Single column layout for mobile */
+    padding: 3rem 2rem; /* Reduced padding for smaller screens */
+    height: auto; /* Allow height to be dynamic */
+    text-align: center; /* Center text */
+    margin-top: -20px; /* Move up slightly */
+  }
+
+  .text-container {
+    max-width: 100%; /* Allow more space on mobile */
+    padding: 0 1rem; /* Added padding */
+  }
+
+  .greeting {
+    font-size: 1.8rem; /* Smaller font size */
+  }
+
+  .name {
+    font-size: 2.5rem; /* Smaller font size */
+  }
+
+  .job-title {
+    font-size: 1.6rem; /* Smaller font size */
+  }
+
+  .description {
+    font-size: 1rem; /* Smaller font size */
+  }
+
+  .image-container {
+    max-width: 90%; /* Allow image to take more space */
+    margin-top: 20px; /* Add margin above the image */
+  }
+}
+
+@media (max-width: 480px) {
+  .greeting {
+    font-size: 1.5rem; /* Smaller font size for very small screens */
+  }
+
+  .name {
+    font-size: 2rem; /* Smaller font size */
+  }
+
+  .job-title {
+    font-size: 1.4rem; /* Smaller font size */
+  }
+
+  .description {
+    font-size: 0.9rem; /* Smaller font size */
+  }
 }
