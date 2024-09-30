@@ -1,10 +1,30 @@
-/* Root styling */
+.main-title-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px; /* Space below the title */
+}
+
+.main-title-container::before, .main-title-container::after {
+  content: "";
+  flex-grow: 1;
+  width: 100vw;
+  border-bottom: 2px solid #50C878; /* Line color */
+  margin: 0 20px; /* Space between the lines and the title */
+}
+
 .main-title {
   font-size: 2.5rem; /* Size of the main title */
-  margin-bottom: 20px; /* Space below the title */
-  color: #CEFF1A; /* Title color */
+  color: #50C878; /* Title color */
   text-align: center; /* Center the title */
 }
+
+@media (max-width: 768px) {
+  .main-title {
+    font-size: 2rem; /* Smaller title size for mobile */
+  }
+}
+
 
 .projects-section {
   display: flex;
@@ -29,7 +49,7 @@
 
 .project-wrapper {
   display: flex;
-  flex-direction: row; /* Switch to row layout */
+  flex-direction: column; /* Switch to row layout */
   align-items: center; /* Align items to the top */
   margin-bottom: 20px;
   width: 100%;
@@ -54,7 +74,7 @@
   display: flex;
   flex-direction: column; /* Stack title and text */
   justify-content: center; /* Center vertically */
-  width: 100%; /* Full width for text */
+  width: 50%; /* Full width for text */
  
   border-radius: 10px; /* Rounded corners for the text container */
  
@@ -131,5 +151,9 @@
 
   .project-link {
     font-size: 1rem; /* Adjust link font size */
+  }
+
+  .text-container-projects {
+    width: 75%;
   }
 }
