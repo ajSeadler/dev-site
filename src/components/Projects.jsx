@@ -10,7 +10,7 @@ function Projects() {
       <div className="project-info-card">
         <h2 className="project-title">Circle of Fifths Viewer</h2>
         <p className="project-description">
-        The Circle of Fifths Viewer is a web application I developed to help users visualize and understand the relationships between musical keys. This interactive tool features an intuitive interface that allows users to explore the Circle of Fifths, view chord progressions within the key they choose, and easily transpose music between different keys. Built with <span className="highlight">JavaScript</span>, <span className="highlight">React</span>, and <span className="highlight">CSS</span>, this project showcases my skills in front-end development and my passion for music theory.
+        The Circle of Fifths Viewer is a web application I developed to help users visualize and understand the relationships between musical keys. This interactive tool features an intuitive interface that allows users to explore the Circle of Fifths, view chord progressions within the key they choose, and easily transpose music between different keys. Built with <span className="highlight">JavaScript</span>, <span className="highlight">React</span>, and <span className="highlight">CSS</span>, this project showcases my skills in front-end development, object oriented programming, and my passion for music theory.
         </p>
         <a href="https://circleoffifthsviewer.com" className="project-link" target="_blank" rel="noopener noreferrer">View Site</a>
 
