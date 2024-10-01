@@ -1,10 +1,9 @@
 import React from "react";
-import Projects from "./Projects";
-import { motion } from "framer-motion"; // Import framer-motion
+import { motion } from "framer-motion";
 import "../styles/HeroSection.css";
 
 function HeroSection() {
-  // Animation Variants
+  // Animation Variants for the greeting
   const textVariant = {
     hidden: { opacity: 0, y: 20 },
     visible: (i) => ({
@@ -23,96 +22,75 @@ function HeroSection() {
     },
   };
 
-  const scrollVariant = {
-    hidden: { opacity: 0, y: -10 },
-    visible: {
-      opacity: 1,
-      y: [0, -10, 0], // Smooth up and down movement
-      transition: {
-        duration: 1.5,
-        ease: "easeInOut",
-        repeat: Infinity, // Infinite loop for continuous animation
-        repeatType: "loop",
-      },
-    },
-  };
+  // Terminal-like typing effect for greeting only
+  const terminalText = "Weelcome! My name is:";
+  const [displayedText, setDisplayedText] = React.useState(""); // Initialize state
+
+  React.useEffect(() => {
+    let index = 0;
+    const interval = setInterval(() => {
+      if (index < terminalText.length) {
+        setDisplayedText((prev) => prev + terminalText.charAt(index)); // Use charAt to get the specific character
+        index++;
+      } else {
+        clearInterval(interval);
+      }
+    }, 50); // Adjust typing speed (in ms)
+
+    return () => clearInterval(interval); // Clean up on unmount
+  }, []); // Dependency array ensures effect runs only once
 
   return (
-    <>
-      <div className="hero-section">
-        <div className="text-container-hero">
-          <motion.h2
-            className="greeting"
-            variants={textVariant}
-            initial="hidden"
-            animate="visible"
-            custom={1} // Custom prop for staggered animation
-          >
-            Welcome! I am
-          </motion.h2>
-          <motion.h1
-            className="name"
-            variants={textVariant}
-            initial="hidden"
-            animate="visible"
-            custom={2}
-          >
-            Anthony Seadler
-          </motion.h1>
-          <motion.h3
-            className="job-title"
-            variants={textVariant}
-            initial="hidden"
-            animate="visible"
-            custom={3}
-          >
-            Full Stack Developer <br /> Network Technician
-          </motion.h3>
-          <motion.p
-            className="description"
-            variants={textVariant}
-            initial="hidden"
-            animate="visible"
-            custom={4}
-          >
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse
-            suscipit natus voluptates et neque fugiat ipsum aperiam eveniet
-            voluptatum officia labore, voluptas ullam, doloribus pariatur eaque
-            possimus atque impedit incidunt?
-          </motion.p>
-        </div>
-        <motion.div
-          className="image-container"
-          variants={imageVariant}
+    <div className="hero-section">
+      <div className="text-container-hero">
+        <motion.h2
+          className="greeting"
           initial="hidden"
           animate="visible"
+          variants={textVariant}
+          custom={1} // Custom prop for staggered animation
         >
-          {/* Glow effect behind the image */}
-          <div className="glow"></div>
-          <img src="portrait.jpg" alt="Anthony Seadler" className="profile-image" />
-        </motion.div>
-
-        {/* Scroll Indicator */}
-        <div
-          className="scroll-indicator"
-          variants={scrollVariant}
+          {displayedText} {/* Display animated text */}
+          <span className="blinking-cursor"></span> {/* Blinking cursor */}
+        </motion.h2>
+        <motion.h1
+          className="name"
           initial="hidden"
           animate="visible"
+          variants={textVariant}
+          custom={2} // Custom prop for staggered animation
         >
-          <svg
-            className="scroll-arrow"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            fill="white"
-            width="30px"
-            height="30px"
-          >
-            <path d="M12 16.5l-6-6h12z" />
-          </svg>
-          <p className="scroll-text">Scroll Down</p>
-        </div>
+          Anthony Seadler
+        </motion.h1>
+        <motion.h3
+          className="job-title"
+          initial="hidden"
+          animate="visible"
+          variants={textVariant}
+          custom={3} // Custom prop for staggered animation
+        >
+          Full Stack Developer <br /> Network Technician
+        </motion.h3>
+        <motion.p
+          className="description"
+          initial="hidden"
+          animate="visible"
+          variants={textVariant}
+          custom={4} // Custom prop for staggered animation
+        >
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse suscipit natus voluptates et neque fugiat ipsum aperiam eveniet voluptatum officia labore, voluptas ullam, doloribus pariatur eaque possimus atque impedit incidunt?
+        </motion.p>
       </div>
-    </>
+      <motion.div
+        className="image-container"
+        variants={imageVariant}
+        initial="hidden"
+        animate="visible"
+      >
+        <div className="glow"></div>
+        <img src="portrait.jpg" alt="Anthony Seadler" className="profile-image" />
+      </motion.div>
+    </div>
   );
 }
 

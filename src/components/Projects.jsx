@@ -35,14 +35,26 @@ function Projects() {
     <div id="projects" className="projects-section" ref={projectsRef}>
       {/* First Project */}
       <div className="main-title-container">
+        <motion.div
+          className="line"
+          initial={{ width: 0 }}
+          animate={inView ? { width: "100%" } : { width: 0 }}
+          transition={{ duration: 1, ease: "easeOut" }}
+        />
         <motion.h1
           className="main-title"
-          initial={{ opacity: 0, y: 50 }} // Start hidden and below
+          initial={{ opacity: 0, y: 50 }}
           animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-          transition={{ duration: 1 }} // Increased transition duration
+          transition={{ duration: 1 }}
         >
           Projects
         </motion.h1>
+        <motion.div
+          className="line"
+          initial={{ width: 0 }}
+          animate={inView ? { width: "100%" } : { width: 0 }}
+          transition={{ duration: 1, ease: "easeOut" }}
+        />
       </div>
 
       <motion.div
