@@ -120,41 +120,49 @@ function Projects() {
       </div>
 
       {/* Second Project */}
-      <motion.div
-        className="second-project-info-card"
-        initial={{ opacity: 0, y: 50 }} // Start hidden and below
-        animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-        transition={{ duration: 1 }} // Increased transition duration
-      >
-        <h2 className="project-title">Disco Stranger</h2>
-        <p className="project-description">
-          The website is the official platform for my band, Disco Stranger, featuring a vibrant parallax design with a merch section and a booking form. Built with <span className="highlight">JavaScript</span>, <span className="highlight">React</span>, and <span className="highlight">CSS</span>, venues can easily send us gig requests through the website, while fans can explore our latest releases and browse merchandise directly from the site.
-        </p>
-        <a href="https://discostrangermusic.com" className="project-link" target="_blank" rel="noopener noreferrer">
-          View Site
-        </a>
-      </motion.div>
 
-      <div className="image-container-projects">
-        {/* Project Image */}
-        <motion.div
-          className="project-wrapper"
-          initial={{ opacity: 0, y: 30 }} // Start hidden and below
-          animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-          transition={{ duration: 1.5 }} // Increased transition duration
-        >
-          <div className="second-project-image">
-            <img src="/disco-stranger-site.png" alt="Disco Stranger Site" />
-          </div>
-          {/* <div className="second-text-container-projects">
-            <h3 className="project-subtitle">Immersive Experience</h3>
-            <p className="second-project-text">
-              The project brings a unique blend of music, visuals, and interaction, creating a rich user experience designed to engage and entertain.
-            </p>
-          </div> */}
-        </motion.div>
-      </div>
+<motion.div
+  className="second-project-info-card"
+  initial={{ opacity: 0, y: 50 }} // Start hidden and below
+  animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+  transition={{ duration: 1 }} // Increased transition duration
+>
+  <h2 className="project-title">Disco Stranger</h2>
+  <p className="project-description">
+    The website is the official platform for my band, Disco Stranger, featuring a vibrant parallax design with a merch section and a booking form. Built with <span className="highlight">JavaScript</span>, <span className="highlight">React</span>, and <span className="highlight">CSS</span>, venues can easily send us gig requests through the website, while fans can explore our latest releases and browse merchandise directly from the site.
+  </p>
+  <a href="https://discostrangermusic.com" className="project-link" target="_blank" rel="noopener noreferrer">
+    View Site
+  </a>
+</motion.div>
+
+{/* Disco Stranger Images Side by Side */}
+<div className="image-container-projects second-project-images">
+  <motion.div
+    className="project-wrapper"
+    initial={{ opacity: 0, y: 30 }} // Start hidden and below
+    animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+    transition={{ duration: 1.5 }} // Increased transition duration
+  >
+    <div className="second-project-image">
+      <img src="/disco-stranger-site.png" alt="Disco Stranger Site" />
     </div>
+  </motion.div>
+
+  {/* Add second image here */}
+  <motion.div
+    className="project-wrapper"
+    initial={{ opacity: 0, y: 30 }} // Start hidden and below
+    animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+    transition={{ duration: 1.5 }} // Increased transition duration
+  >
+    <div className="second-project-image">
+      <img src="/booking.png" alt="Booking" />
+    </div>
+  </motion.div>
+</div>
+
+      </div>
   );
 }
 

@@ -6,11 +6,16 @@
 
 body {
   margin: 0;
-  font-family: "Arial", sans-serif;
+  font-family: sans-serif;
+  cursor: url('/tech-cursor.svg') 16 16, auto;
   height: 100vh;
-  background: linear-gradient(120deg, #0d0d0d, #2b3e53);
+  background: linear-gradient(120deg, #0d0d0d, #3c237f);
   background-size: cover;
   background-position: center;
   background-attachment: fixed; /* Makes the background fixed during scrolling */
   color: white;
+}
+
+button, a {
+  cursor: url('/path-to-your-svg/tech-hover-cursor.svg') 16 16, pointer;
 }

@@ -15,16 +15,19 @@
   text-align: left;
 }
 
+.hero-section h1, .hero-section h2, .hero-section h3, .hero-section p {
+  font-weight: 100 !important; /* Set for all text elements */
+}
+
 .greeting {
   font-size: 2.5rem; /* Base font size */
-  font-weight: 300; /* Light weight for a clean look */
   color: blanchedalmond;
-  transition: color 0.3s ease; /* Transition for hover */
+ 
 }
 
 .name {
   font-size: 4rem; /* Base font size */
-  font-weight: 200; /* Lighter weight for simplicity */
+  font-weight: 100 !important; /* Lighter weight for simplicity */
   text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5); /* Softer shadow */
 }
 

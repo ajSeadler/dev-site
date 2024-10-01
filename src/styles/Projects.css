@@ -1,14 +1,16 @@
+/* Main title container styling */
 .main-title-container {
   display: flex;
   align-items: center;
+  width: 100%;
   justify-content: center;
-  margin-bottom: 20px; /* Space below the title */
+  margin-bottom: 10%; /* Space below the title */
 }
 
 .main-title-container::before, .main-title-container::after {
   content: "";
   flex-grow: 1;
-  width: 45rem;
+  width: 100%;
   border-bottom: 2px solid #50C878; /* Line color */
   margin: 0 20px; /* Space between the lines and the title */
 }
@@ -25,167 +27,155 @@
   }
 }
 
-
+/* Projects section styling */
 .projects-section {
   display: flex;
   flex-direction: column; /* Stack images and cards */
   align-items: center; /* Center content */
   justify-content: center;
-  padding: 4rem 4rem; /* Padding for the section */
+  padding: 4rem 2rem; /* Adjusted padding for better spacing */
 }
 
-.project-text {
-  width: 100%;
-  padding: 0px;
-}
-
+/* Text container styling */
+.project-text,
 .second-project-text {
   width: 100%;
   padding: 5px;
 }
 
+/* Image container styling */
 .image-container-projects {
-  display: flex;  /* Changed to flex to arrange images in a row */
-  flex-direction: row; /* Set direction to row */
+  display: flex;
+  flex-direction: row; /* Arrange images in a row */
   align-items: flex-start; /* Align images to the top */
-  justify-content: space-around; /* Distribute space evenly between items */
-  width: 100%; /* Full width for the container */
-  flex-wrap: wrap; /* Allow wrapping to the next line on smaller screens */
+  justify-content: space-around; /* Distribute space evenly */
+  width: 100%;
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
 }
 
 /* Project wrapper styling */
 .project-wrapper {
   display: flex;
-  flex-direction: column; /* Keep the text below images in column layout */
+  flex-direction: column; /* Keep text below images */
   align-items: center; /* Center items */
-  margin: 10px; /* Reduced margin for better spacing in row layout */
-  width: 30%; /* Set a specific width to allow 3 items in a row */
+  margin: 10px; /* Maintain consistent spacing */
+  width: 30%; /* Set width to allow 3 items in a row */
 }
 
+@media (max-width: 768px) {
+  .project-wrapper {
+    width: 100%; /* Full width on mobile */
+  }
+}
 
-
-
+/* Image styling */
 .project-image img {
   width: auto; /* Maintain aspect ratio */
-  height: 600px; /* Set a fixed height */
-  
+  height: 600px; /* Fixed height */
 }
 
 .second-project-image img {
-  width: auto; /* Maintain aspect ratio */
-  height: 600px; /* Set a fixed height */
-  
+  width: 100%; /* Full width for the container */
+  height: auto; /* Maintain aspect ratio */
+  max-width: 100%; /* Ensure no overflow */
+  margin: auto; /* Center images */
+  margin-top: 8%;
 }
-
-
-
-
 
 /* Text container styling */
-.text-container-projects {
-  display: flex;
-  flex-direction: column; /* Stack title and text */
-  justify-content: center; /* Center vertically */
-  width: 50%; /* Full width for text */
-  border-radius: 10px; /* Rounded corners for the text container */
- 
-}
-
+.text-container-projects,
 .second-text-container-projects {
   display: flex;
   flex-direction: column; /* Stack title and text */
   justify-content: center; /* Center vertically */
-  width: 100%; /* Full width for text */
+  width: 50%; /* Set width for desktop */
+  border-radius: 10px; /* Rounded corners */
+}
+
+.second-text-container-projects {
+  width: 100%; /* Full width for second project */
   margin: 3%;
- 
 }
 
 /* Info card styling */
-.project-info-card {
-  
-  border-radius: 10px;
-  padding: 30px; /* Increased padding for larger card */
-  max-width: 50%; /* Set maximum width for the card */
-  margin: auto; /* Center the card */
-  color: #fff; /* Adjust text color to stand out */
-}
-
-/* Info card styling */
+.project-info-card,
 .second-project-info-card {
-  
   border-radius: 10px;
-  margin-top: 10% !important;
-  padding: 30px; /* Increased padding for larger card */
-  max-width: 50%; /* Set maximum width for the card */
+  border: 1px solid #fff;
+  padding: 30px; /* Increased padding */
+  max-width: 50%; /* Set max width */
   margin: auto; /* Center the card */
-  color: #fff; /* Adjust text color to stand out */
+  color: #fff; /* Text color */
 }
 
+.second-project-info-card {
+  margin-top: 10% !important;
+}
+
+/* Title and description styling */
 .project-title {
-  font-size: 2rem; /* Increased title font size */
-  margin-bottom: 15px; /* Spacing below title */
-  color:blanchedalmond;
+  font-size: 2rem;
+  margin-bottom: 15px;
+  color: #fff;
   text-decoration: underline;
 }
 
 .project-description {
-  font-size: 1.2rem; /* Increased description font size */
-  margin-bottom: 20px; /* Increased margin below description */
-  color: #f0f0f0;
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  color: #f0f0f0ce;
 }
 
+/* Highlight text styling */
 .highlight {
-  font-weight: bold; /* Makes the text bold */
-  color: rgb(209, 149, 255); /* Example highlight color */
-  text-decoration: underline; /* Optional: underlines the text */
+  font-weight: bold;
+  color: rgb(209, 149, 255);
+  text-decoration: underline;
 }
 
-
+/* Link styling */
 .project-link {
-  color: #50C878; /* Link color */
+  color: #50C878;
   border: 2px solid #50C878;
   padding: 5px;
-  font-weight: bold; /* Bold text */
-  text-decoration: none; /* No underline */
-  transition: color 0.3s ease; /* Smooth color transition */
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
 
 .project-link:hover {
-  color: rgb(209, 149, 255); /* Change color on hover */
+  color: rgb(209, 149, 255);
   border: 2px solid rgb(190, 165, 37);
 }
 
-/* Responsive styling for smaller screens */
+/* Responsive styling */
 @media (max-width: 768px) {
   .projects-section {
-    padding: 2rem 1rem; /* Reduced padding for smaller screens */
+    padding: 2rem 1rem; /* Adjust padding */
   }
 
   .image-container-projects {
-    flex-direction: column; /* Stack images vertically on smaller screens */
-    align-items: center; /* Center images on smaller screens */
-  }
-
-  .project-wrapper {
-    width: 100%; /* Full width for each project wrapper on mobile */
+    flex-direction: column; /* Stack images vertically */
+    align-items: center; /* Center images */
+    width: 100%; /* Full width */
   }
 
   .project-image img {
-    height: 400px;
-
+    height: 400px; /* Smaller height on mobile */
   }
 
-  .project-info-card {
-    max-width: 100%; /* Expand card width on mobile */
-    padding: 20px; /* Adjust padding for mobile */
+  .project-info-card,
+  .second-project-info-card {
+    max-width: 100%; /* Expand card width */
+    padding: 20px; /* Adjust padding */
   }
 
   .project-title {
-    font-size: 1.5rem; /* Smaller title font size */
+    font-size: 1.5rem; /* Smaller font size */
   }
 
   .project-description {
-    font-size: 1rem; /* Smaller description font size */
+    font-size: 1rem; /* Adjust description size */
   }
 
   .project-link {
@@ -193,17 +183,6 @@
   }
 
   .text-container-projects {
-    width: 75%;
+    width: 75%; /* Adjust width */
   }
-  .second-project-info-card {
-    max-width: 100%; /* Expand card width on mobile */
-    padding: 20px; /* Adjust padding for mobile */
-  }
-
-  .second-project-image img {
-    height: 16rem;
-    width: auto;
-    margin: auto !important;
-  }
-
 }
