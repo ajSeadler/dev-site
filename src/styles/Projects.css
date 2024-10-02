@@ -109,6 +109,10 @@
   margin-top: 8%;
 }
 
+.second-project-image {
+  width: 50vw;
+}
+
 /* Text container styling */
 .text-container-projects,
 .second-text-container-projects {
@@ -183,6 +187,7 @@
   transition: color 0.3s ease;
 }
 
+
 .project-link:hover {
   color: rgb(209, 149, 255);
   border: 2px solid rgb(190, 165, 37);
@@ -193,6 +198,10 @@
   .projects-section {
     padding: 2rem 1rem;
     /* Adjust padding */
+  }
+
+  .second-project-image {
+    width: 100%;
   }
 
   .image-container-projects {
