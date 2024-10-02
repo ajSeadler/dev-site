@@ -72,17 +72,16 @@ function HeroSection() {
           Full Stack Developer <br /> Network Technician
         </motion.h3>
         <motion.p
-          className="description"
-          initial="hidden"
-          animate="visible"
-          variants={textVariant}
-          custom={4} // Custom prop for staggered animation
-        >
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse suscipit
-          natus voluptates et neque fugiat ipsum aperiam eveniet voluptatum
-          officia labore, voluptas ullam, doloribus pariatur eaque possimus
-          atque impedit incidunt?
-        </motion.p>
+  className="description"
+  initial="hidden"
+  animate="visible"
+  variants={textVariant}
+  custom={4}
+>
+  Passionate developer specializing in modern web technologies/practices. Here you will find a bit more information about me and the skills I possess. I work with tools like PostgreSQL and Express.js to create reliable backends, while also focusing on building clean and intuitive front-end experiences.
+</motion.p>
+
+
 
         {/* Fancy Resume Button */}
         <div className="resume">
