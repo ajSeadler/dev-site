@@ -35,7 +35,7 @@ function HeroSection() {
       } else {
         clearInterval(interval);
       }
-    }, 50); // Adjust typing speed (in ms)
+    }, 100); // Adjust typing speed (in ms)
 
     return () => clearInterval(interval); // Clean up on unmount
   }, []); // Dependency array ensures effect runs only once

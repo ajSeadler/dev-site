@@ -123,6 +123,10 @@
   /* Rounded corners */
 }
 
+.project-subtitle {
+  text-decoration: underline 3px #ff496c;
+}
+
 .second-text-container-projects {
   width: 100%;
   /* Full width for second project */
@@ -165,7 +169,7 @@
 /* Highlight text styling */
 .highlight {
   font-weight: bold;
-  color: rgb(209, 149, 255);
+  color: #ff496c;
   text-decoration: underline;
 }
 

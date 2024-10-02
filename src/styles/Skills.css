@@ -43,7 +43,8 @@
 }
 
 .skill-bubble:hover {
-  transform: scale(1.1);
+  transform: scale(1.5);
+  border: 1px solid #ff496c;
 }
 
 @media (max-width: 768px) {

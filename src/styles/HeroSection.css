@@ -73,11 +73,6 @@
   /* Transition effect */
 }
 
-.job-title:hover {
-  color: rgba(209, 149, 255, 0.8);
-  /* Slight color change on hover */
-}
-
 .description {
   font-size: 1.4rem;
   /* Base font size */

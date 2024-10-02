@@ -24,7 +24,7 @@
 }
 
 .navbar-brand {
-  color: blanchedalmond;
+  color: #ddd;
   font-weight: thin;
 }
 
@@ -49,7 +49,7 @@
 
 .desktop-navbar .navbar-links a {
   text-decoration: none;
-  color: blanchedalmond;
+  color: #ddd;
   font-weight: thin;
   transition: color 0.3s ease;
 }
@@ -74,7 +74,7 @@
 .bar {
   width: 30px;
   height: 3px;
-  background-color: blanchedalmond;
+  background-color: #ddd;
   margin: 4px 0;
   transition: background-color 0.3s ease;
 }
@@ -85,22 +85,22 @@
 
 @media (max-width: 768px) {
   .desktop-navbar {
-      display: none;
+    display: none;
   }
 
   .mobile-navbar {
-      display: flex;
-      align-items: center;
-      padding: 15px;
-      justify-content: space-between;
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    justify-content: space-between;
   }
 
   .navbar-hamburger {
-      display: flex;
+    display: flex;
   }
 
   .navbar-links li {
-      margin: 10px 0;
-      text-align: center;
+    margin: 10px 0;
+    text-align: center;
   }
 }
