@@ -82,6 +82,44 @@
   /* Slightly muted color for readability */
 }
 
+.resume {
+  margin-top: 5%;
+}
+
+.resume-button {
+  color: #ff496c;
+  text-decoration: none;
+  padding: 10px 20px;
+  border: 2px solid #ff496c;
+  font-size: 1.2rem;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  background: transparent;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 0 #d9405e, 0 5px 10px rgba(0, 0, 0, 0.3);
+  /* 3D-like shadow effect */
+  cursor: pointer;
+}
+
+.resume-button:hover {
+  background-color: #ff496c;
+  color: white;
+  box-shadow: 0 3px 0 #d9405e, 0 3px 5px rgba(0, 0, 0, 0.3);
+  /* Slightly reduced shadow on hover */
+  transform: translateY(2px);
+  /* Button moves down slightly to enhance the 3D effect */
+}
+
+.resume-button:active {
+  box-shadow: 0 2px 0 #d9405e, 0 2px 5px rgba(0, 0, 0, 0.2);
+  /* Reduced shadow when clicked */
+  transform: translateY(4px);
+  /* Button appears pressed down */
+}
+
+
 .image-container {
   max-width: 500px;
   margin: 0 auto;
@@ -96,6 +134,8 @@
   /* Smooth transition for scaling */
 }
 
+
+
 .glow {
   position: absolute;
   /* Position glow behind the image */
@@ -106,7 +146,7 @@
   height: 100%;
   border-radius: 50%;
   /* Match the image's border radius */
-  background-color: #ff496c;
+  background-color: #8FBB99;
   /* Sleek color for glow */
   filter: blur(15px);
   /* Add blur for glowing effect */
@@ -256,5 +296,14 @@
   .description {
     font-size: 0.9rem;
     /* Smaller font size */
+  }
+
+  .image-container {
+    margin-top: 15%;
+  }
+
+  .resume-button {
+    padding: 8px 16px;
+    font-size: 1rem;
   }
 }

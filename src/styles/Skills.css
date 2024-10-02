@@ -27,11 +27,11 @@
 }
 
 .skill-bubble {
-  width: 100px;
-  height: 100px;
+  width: 10rem;
+  height: 10rem;
   border-radius: 50%;
   background-color: transparent;
-  border: 2px solid #fff;
+  box-shadow: 0 3px 0 #d9405e, 0 3px 5px rgba(0, 0, 0, 0.3);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -44,7 +44,7 @@
 
 .skill-bubble:hover {
   transform: scale(1.5);
-  border: 1px solid #ff496c;
+  border: 4px solid #ff496c;
 }
 
 @media (max-width: 768px) {

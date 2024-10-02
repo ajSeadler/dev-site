@@ -23,7 +23,7 @@ function HeroSection() {
   };
 
   // Terminal-like typing effect for greeting only
-  const terminalText = "Weelcome! My name is:";
+  const terminalText = "Hi! My name is:";
   const [displayedText, setDisplayedText] = React.useState(""); // Initialize state
 
   React.useEffect(() => {
@@ -78,8 +78,24 @@ function HeroSection() {
           variants={textVariant}
           custom={4} // Custom prop for staggered animation
         >
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse suscipit natus voluptates et neque fugiat ipsum aperiam eveniet voluptatum officia labore, voluptas ullam, doloribus pariatur eaque possimus atque impedit incidunt?
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse suscipit
+          natus voluptates et neque fugiat ipsum aperiam eveniet voluptatum
+          officia labore, voluptas ullam, doloribus pariatur eaque possimus
+          atque impedit incidunt?
         </motion.p>
+
+        {/* Fancy Resume Button */}
+        <div className="resume">
+        <motion.a
+          href="/resume.pdf" // Adjust the path to your resume file
+          className="resume-button"
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ delay: 1, duration: 0.5 }}
+        >
+          Resume
+        </motion.a>
+        </div>
       </div>
       <motion.div
         className="image-container"
@@ -88,7 +104,11 @@ function HeroSection() {
         animate="visible"
       >
         <div className="glow"></div>
-        <img src="portrait.jpg" alt="Anthony Seadler" className="profile-image" />
+        <img
+          src="portrait.jpg"
+          alt="Anthony Seadler"
+          className="profile-image hexagon"
+        />
       </motion.div>
     </div>
   );
