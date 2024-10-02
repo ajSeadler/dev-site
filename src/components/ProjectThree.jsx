@@ -48,6 +48,10 @@ function ProjectThree() {
           <div className="second-project-image">
             <img src="/tricks.png" alt="Disco Stranger Site" />
           </div>
+          <div className="text-container-projects" style={{width:'100%', marginTop:'5%'}}>
+  <h3 className="project-subtitle">Extensive Trick Database</h3>
+  <p className="project-text">Explore a comprehensive collection of tricks, categorized for easy navigation. Whether you're a beginner or an advanced user, you'll find everything you need to unlock new tricks.</p>
+</div>
         </motion.div>
 
         <motion.div
@@ -58,7 +62,12 @@ function ProjectThree() {
         >
           <div className="second-project-image">
             <img src="/prof.png" alt="Booking" />
+            
           </div>
+          <div className="text-container-projects" style={{width:'100%', marginTop:'5%'}}>
+    <h3 className="project-subtitle">Effortless Progress Tracking</h3>
+    <p className="project-text">Monitor your progress with ease, marking tricks as mastered or learning. Stay motivated with a clear overview of your accomplishments and goals.</p>
+  </div>
         </motion.div>
       </div>
     </div>

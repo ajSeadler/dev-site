@@ -73,7 +73,9 @@ function ProjectOne() {
           </div>
           <div className="text-container-projects">
             <h3 className="project-subtitle">Easy Navigation</h3>
-            <p className="project-text">The homepage offers a simple and intuitive layout...</p>
+            <p className="project-text">
+              The homepage offers a simple and intuitive layout, allowing users to quickly explore the Circle of Fifths and access features.
+            </p>
           </div>
         </motion.div>
 
@@ -88,7 +90,9 @@ function ProjectOne() {
           </div>
           <div className="text-container-projects">
             <h3 className="project-subtitle">Circle of Fifths & Scale Selection</h3>
-            <p className="project-text">Users can interact with the Circle of Fifths chart...</p>
+            <p className="project-text">
+              Users can interact with the Circle of Fifths chart to select a key and corresponding scale, providing an educational tool for exploring music theory.
+            </p>
           </div>
         </motion.div>
         <motion.div

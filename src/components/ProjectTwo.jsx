@@ -46,6 +46,10 @@ function ProjectTwo() {
           <div className="second-project-image">
             <img src="/disco-stranger-site.png" alt="Disco Stranger Site" />
           </div>
+          <div className="text-container-projects" style={{width:'100%', marginTop:'5%'}}>
+  <h3 className="project-subtitle">Dynamic and Engaging Homepage</h3>
+  <p className="project-text">The homepage captivates visitors with its vibrant parallax design, providing easy access to the band's latest releases, upcoming gigs, and merchandise, all in one intuitive layout.</p>
+</div>
         </motion.div>
 
         <motion.div
@@ -57,6 +61,10 @@ function ProjectTwo() {
           <div className="second-project-image">
             <img src="/booking.png" alt="Booking" />
           </div>
+          <div className="text-container-projects" style={{width:'100%', marginTop:'5%'}}>
+  <h3 className="project-subtitle">Streamlined Booking System</h3>
+  <p className="project-text">The streamlined booking system allows venues to easily submit gig requests through a straightforward form, making it simple for event organizers to get in touch with the band.</p>
+</div>
         </motion.div>
       </div>
     </div>
