@@ -270,10 +270,7 @@
   }
 
   .image-container {
-    max-width: 90%;
-    /* Allow image to take more space */
-    margin-top: 20px;
-    /* Add margin above the image */
+    display: none;
   }
 }
 
