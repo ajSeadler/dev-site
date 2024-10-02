@@ -32,6 +32,15 @@ function Skills() {
     "Framer Motion", "CI/CD"
   ];
 
+  const getRandomPosition = () => {
+    return {
+      x: `${Math.random() * 200 - 100}%`,  // Random X position between -100% and 100%
+      y: `${Math.random() * 200 - 100}%`,  // Random Y position between -100% and 100%
+      scale: Math.random() * 0.5 + 0.8,     // Random scale between 0.8 and 1.3
+      opacity: Math.random() * 0.5 + 0.5   // Random opacity between 0.5 and 1
+    };
+  };
+
   return (
     <div id="skills" className="skills-section" ref={skillsRef}>
       <div className="main-title-container">
@@ -67,6 +76,14 @@ function Skills() {
           <motion.div
             className="skill-bubble"
             key={index}
+            initial={{ opacity: 0, scale: 0.8, x: `${Math.random() * 200 - 100}%`, y: `${Math.random() * 200 - 100}%` }}
+            animate={inView ? { opacity: 1, scale: 1, x: 0, y: 0 } : { opacity: 0, scale: 0.8, x: `${Math.random() * 200 - 100}%`, y: `${Math.random() * 200 - 100}%` }}
+            transition={{
+              opacity: { duration: 0.5 },
+              scale: { type: "spring", stiffness: 150, damping: 20 },
+              x: { type: "spring", stiffness: 80, damping: 20 },
+              y: { type: "spring", stiffness: 80, damping: 20 },
+            }}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
           >

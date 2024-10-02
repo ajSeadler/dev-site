@@ -10,17 +10,18 @@
 }
 
 .main-title {
-  font-size: 36px;
+  font-size: 3rem;
   text-align: center;
 }
 
 .skills-list {
   display: grid;
-  /* Change to grid layout */
   grid-template-columns: repeat(3, minmax(100px, 1fr));
-  /* Responsive grid */
-  gap: 15px;
-  margin: 10%;
+  /* 3 columns by default */
+  gap: 20px;
+  /* Decrease the gap to bring bubbles closer */
+  margin: 5%;
+  font-weight: bold;
   padding: 20px;
   justify-items: center;
   /* Center items in the grid */
@@ -36,10 +37,9 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-  font-size: 14px;
+  font-size: 1.1rem;
   color: #fff;
   transition: transform 0.3s ease;
-  cursor: pointer;
 }
 
 .skill-bubble:hover {
@@ -47,14 +47,44 @@
   border: 4px solid #ff496c;
 }
 
+/* Mobile Responsiveness */
 @media (max-width: 768px) {
-  .skill-bubble {
-    width: 90px;
-    height: 90px;
-    font-size: .7rem;
+  .skills-list {
+    grid-template-columns: repeat(3, 1fr);
+    /* 3 columns on mobile */
+    gap: 10px;
+    /* Decrease the gap for mobile */
+    margin: 0;
+    /* Remove margin to better fit the bubbles */
+    padding: 0;
+    /* Remove padding for mobile */
+    font-weight: bold;
   }
 
+  .skill-bubble {
+    width: 8rem;
+    /* Adjust size for smaller screens */
+    height: 8rem;
+    font-size: .9rem;
+    /* Increase font size on mobile */
+  }
+}
+
+@media (max-width: 480px) {
   .skills-list {
-    grid-template-columns: repeat(2, minmax(100px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
+    /* 3 columns on very small screens */
+    gap: 5px;
+
+    /* Decrease the gap further if necessary */
+  }
+
+  .skill-bubble {
+    width: 6rem;
+    /* Make the bubbles smaller for very small screens */
+    height: 6rem;
+    font-size: 0.9rem;
+
+    /* Adjust font size for very small screens */
   }
 }

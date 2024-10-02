@@ -245,4 +245,8 @@
     width: 75%;
     /* Adjust width */
   }
+
+  .main-title {
+    font-size: 2.3rem !important;
+  }
 }
