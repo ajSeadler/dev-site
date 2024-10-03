@@ -104,7 +104,7 @@ function HeroSection() {
       >
         <div className="glow"></div>
         <img
-          src="/col2.JPG"
+          src="/hero-img.png"
           alt="Anthony Seadler"
           className="profile-image"
         />
