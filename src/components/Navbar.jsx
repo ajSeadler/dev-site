@@ -29,8 +29,9 @@ const Navbar = () => {
                 <div className="navbar-brand">AJ<span className="last-name">Seadler</span></div>
                 <ul className="navbar-links">
                     <li><a href="#about" onClick={handleScroll}>About</a></li>
-                    <li><a href="#projects" onClick={handleScroll}>Projects</a></li>
                     <li><a href="#skills" onClick={handleScroll}>Skills</a></li>
+                    <li><a href="#projects" onClick={handleScroll}>Projects</a></li>
+                    
                     <li><a href="#contact" onClick={handleScroll}>Contact</a></li>
                     <li><a href="#resume" onClick={handleScroll}>Resume</a></li>
                 </ul>

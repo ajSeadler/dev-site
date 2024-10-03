@@ -104,9 +104,9 @@ function HeroSection() {
       >
         <div className="glow"></div>
         <img
-          src="portrait.jpg"
+          src="/col2.JPG"
           alt="Anthony Seadler"
-          className="profile-image hexagon"
+          className="profile-image"
         />
       </motion.div>
     </div>

@@ -123,18 +123,31 @@
 
 
 .image-container {
-  max-width: 500px;
+  width: 75%;
+  /* Set the container's width */
+  height: 75%;
+  /* Ensure the height matches the width to make it a square */
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin: 0 auto;
-  /* Center the image on smaller screens */
+  /* Centers the image container horizontally */
+  border-radius: 50%;
+  /* Full circle for the container */
+  overflow: hidden;
+  /* Ensures the image fits within the circle */
+  border: 5px solid #ddd;
+
+  /* Optional: adds a border around the circle */
 }
 
 .profile-image {
   width: 100%;
-  border-radius: 50%;
-  /* More rounded corners */
-  transition: transform 0.3s ease;
-  /* Smooth transition for scaling */
+  height: 100%;
+  object-fit: cover;
 }
+
+
 
 
 

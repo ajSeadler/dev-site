@@ -1,7 +1,8 @@
 import React from "react";
 import HeroSection from "./HeroSection";
 import Projects from "./Projects"; 
-import Skills from "./Skills";// Make sure the path is correct
+import Skills from "./Skills";
+import Contact from "./Contact";
 
 function Home() {
   return (
@@ -9,6 +10,7 @@ function Home() {
       <HeroSection />
       <Skills />
       <Projects />
+      <Contact />
     </div>
   );
 }
