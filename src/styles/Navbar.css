@@ -35,7 +35,7 @@
 }
 
 .desktop-navbar .navbar-links a:hover {
-  color: rgb(209, 149, 255);
+  color: #ff496c;
 }
 
 /* Mobile Navbar */
@@ -79,7 +79,8 @@
 }
 
 .bar.active {
-  background-color: rgb(209, 149, 255);
+  background-color: #ff496c;
+  ;
 }
 
 /* Mobile Full-Screen Menu */
@@ -111,7 +112,7 @@
 }
 
 .navbar-links-wrapper .navbar-links a:hover {
-  color: rgb(209, 149, 255);
+  color: #ff496c;
 }
 
 /* Responsive Adjustments */

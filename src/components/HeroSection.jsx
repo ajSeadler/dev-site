@@ -23,7 +23,7 @@ function HeroSection() {
   };
 
   // Terminal-like typing effect for greeting only
-  const terminalText = "Hi! My name is:";
+  const terminalText = "Hii! My name is:";
   const [displayedText, setDisplayedText] = React.useState(""); // Initialize state
 
   React.useEffect(() => {
@@ -41,7 +41,7 @@ function HeroSection() {
   }, []); // Dependency array ensures effect runs only once
 
   return (
-    <div className="hero-section">
+    <div className="hero-section" id="about">
       <div className="text-container-hero">
         <motion.h2
           className="greeting"
@@ -72,28 +72,30 @@ function HeroSection() {
           Full Stack Developer <br /> Network Technician
         </motion.h3>
         <motion.p
-  className="description"
-  initial="hidden"
-  animate="visible"
-  variants={textVariant}
-  custom={4}
->
-  Passionate developer specializing in modern web technologies/practices. Here you will find a bit more information about me and the skills I possess. I work with tools like PostgreSQL and Express.js to create reliable backends, while also focusing on building clean and intuitive front-end experiences.
-</motion.p>
-
-
+          className="description"
+          initial="hidden"
+          animate="visible"
+          variants={textVariant}
+          custom={4}
+        >
+          Passionate developer specializing in modern web
+          technologies/practices. Here you will find a bit more information
+          about me and the skills I possess. I work with tools like PostgreSQL
+          and Express.js to create reliable backends, while also focusing on
+          building clean and intuitive front-end experiences.
+        </motion.p>
 
         {/* Fancy Resume Button */}
         <div className="resume">
-        <motion.a
-          href="/resume.pdf" // Adjust the path to your resume file
-          className="resume-button"
-          initial={{ opacity: 0, x: -20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ delay: 1, duration: 0.5 }}
-        >
-          Resume
-        </motion.a>
+          <motion.a
+            href="/resume.pdf" // Adjust the path to your resume file
+            className="resume-button"
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 1, duration: 0.5 }}
+          >
+            Resume
+          </motion.a>
         </div>
       </div>
       {/* <motion.div
