@@ -98,6 +98,16 @@ function Skills() {
         />
       </div>
 
+      {/* Motion Indicator Message */}
+      <motion.div
+        className="click-indicator"
+        initial={{ opacity: 0, y: 50 }}
+        animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: -10 }}
+        transition={{ duration: 1 }}
+      >
+        Click on a skill for a random fact!
+      </motion.div>
+
       <motion.div
         className="skills-list"
         initial={{ opacity: 0, y: 50 }}
