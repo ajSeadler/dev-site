@@ -52,7 +52,7 @@
   /* Center text */
   align-items: center;
   /* Center text */
-  height: 3rem;
+  height: auto !important;
   /* Fixed height for bubbles */
   width: 70%;
 }
