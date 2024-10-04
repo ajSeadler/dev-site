@@ -1,11 +1,13 @@
 import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import "../styles/Skills.css";
+import LoadingSpinner from "./LoadingSpinner"; // Adjust the import path according to your project structure
 
 function Skills() {
   const [inView, setInView] = useState(false);
-  const [showModal, setShowModal] = useState(false); // State to show/hide modal
-  const [randomFact, setRandomFact] = useState(""); // State to store the random fact
+  const [showModal, setShowModal] = useState(false);
+  const [randomFact, setRandomFact] = useState("");
+  const [loading, setLoading] = useState(false); // State to manage loading
   const skillsRef = useRef(null);
 
   // Intersection observer logic for animation
@@ -44,18 +46,9 @@ function Skills() {
     "CI/CD",
   ];
 
-  // Random position for skill bubbles
-  const getRandomPosition = () => {
-    return {
-      x: `${Math.random() * 200 - 100}%`, // Random X position between -100% and 100%
-      y: `${Math.random() * 200 - 100}%`, // Random Y position between -100% and 100%
-      scale: Math.random() * 0.5 + 0.8, // Random scale between 0.8 and 1.3
-      opacity: Math.random() * 0.5 + 0.5, // Random opacity between 0.5 and 1
-    };
-  };
-
   // Function to fetch a random fact
   const fetchRandomFact = async () => {
+    setLoading(true); // Set loading to true before the fetch
     try {
       const response = await fetch(
         "https://uselessfacts.jsph.pl/random.json?language=en"
@@ -64,6 +57,8 @@ function Skills() {
       setRandomFact(data.text); // Set the random fact from the API response
     } catch (error) {
       setRandomFact("Sorry, couldn't fetch a fact right now.");
+    } finally {
+      setLoading(false); // Reset loading state after fetching
     }
   };
 
@@ -149,6 +144,8 @@ function Skills() {
         <div className="modal-overlay" onClick={closeModal}>
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
             <h2>Random Fact</h2>
+            {/* Loading Spinner */}
+            {loading && <LoadingSpinner />}
             <p>{randomFact}</p>
             <button className="close-modal-btn" onClick={closeModal}>
               Close
