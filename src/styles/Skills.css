@@ -54,7 +54,7 @@
   /* Center text */
   height: 3rem;
   /* Fixed height for bubbles */
-  width: 50%;
+  width: 70%;
 }
 
 .skill-bubble:hover {
