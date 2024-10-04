@@ -1,25 +1,93 @@
+/* Global Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+:root {
+  --background-gradient: linear-gradient(120deg, #A2C2E9, #B2E2D8);
+  /* Light mode gradient background */
+  --text-color: #000000;
+  --secondary-color: #2ecc71;
+
+  /* Light mode hover link/button color */
+}
 
 
-body {
-  margin: 0;
-  font-family: 'Poppins', sans-serif;
-  cursor: url('/tech-cursor.svg') 16 16, auto;
-  height: 100vh;
+/* Dark Mode Variables */
+body.dark-mode {
+  --background-color: #1e1e1e;
+  /* Dark mode background */
+  --text-color: #ddd;
+  /* Dark mode text */
+
+  --secondary-color: #2ecc71;
+  /* Dark mode hover link/button color */
+}
+
+/* Gradient background for dark mode */
+body.dark-mode {
   background: linear-gradient(120deg, #0d0d0d, #2A1E5C);
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  /* Makes the background fixed during scrolling */
-  color: white;
+  /* Keeps the background fixed during scroll */
 }
 
+/* Base Body Styling */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  height: 100vh;
+  background: var(--background-gradient);
+  /* Dynamic background color */
+  color: var(--text-color);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  /* Dynamic text color */
+  cursor: url('/tech-cursor.svg') 16 16, auto;
+  /* Custom cursor */
+}
+
+/* Styling for buttons and links */
 button,
 a {
   cursor: url('/path-to-your-svg/tech-hover-cursor.svg') 16 16, pointer;
+  background-color: var(--primary-color);
+  /* Dynamic button background */
+  color: var(--text-color);
+  /* Dynamic text color */
+}
+
+/* Link Styling */
+a {
+  color: var(--primary-color);
+  /* Dynamic link color */
+}
+
+a:hover {
+  color: var(--secondary-color);
+  /* Dynamic hover link color */
+}
+
+/* Headings and Text */
+h1,
+h2,
+h3,
+p,
+a {
+  color: var(--text-color);
+  /* Dynamic heading and text color */
+}
+
+/* Dark Mode Toggle Button */
+.dark-mode-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-color);
+  /* Dynamic toggle button color */
+  font-size: 2rem;
 }

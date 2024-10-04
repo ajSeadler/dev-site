@@ -2,11 +2,9 @@
 .navbar {
   width: 100%;
   z-index: 10;
-
 }
 
 .navbar-brand {
-  color: #ddd;
   font-weight: thin;
 }
 
@@ -30,7 +28,6 @@
 
 .desktop-navbar .navbar-links a {
   text-decoration: none;
-  color: #ddd;
   font-weight: thin;
   transition: color 0.3s ease;
 }
@@ -46,10 +43,17 @@
   padding: 15px;
   justify-content: space-between;
   background-color: transparent;
-
   width: 100%;
-
   z-index: 1000;
+}
+
+/* Flex container for hamburger and toggle button */
+.mobile-navbar .toggle-container {
+  display: flex;
+  align-items: center;
+  /* Align vertically */
+  gap: 10px;
+  /* Adjust gap as needed */
 }
 
 .navbar-hamburger {
