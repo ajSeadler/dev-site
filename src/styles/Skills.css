@@ -29,23 +29,43 @@
 }
 
 .skill-bubble {
-  width: 10rem;
-  height: 10rem;
-  border-radius: 50%;
-  background-color: transparent;
-  box-shadow: 0 3px 0 #d9405e;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+  padding: 10px 15px;
+  /* Match padding from the button */
+  border: 2px solid #ff496c;
+  /* Border color */
+  border-radius: 6px;
+  /* Match the button border radius */
+  background: transparent;
+  /* Make background transparent like the button */
   font-size: 1.1rem;
-
-  transition: transform 0.3s ease;
+  font-weight: bold;
+  /* Font weight */
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  box-shadow: 0 5px 0 #d9405e, 0 5px 10px rgba(0, 0, 0, 0.3);
+  /* Shadow effect */
+  transition: all 0.3s ease;
+  /* Smooth transition */
+  display: flex;
+  /* Flex for centering */
+  justify-content: center;
+  /* Center text */
+  align-items: center;
+  /* Center text */
+  height: 3rem;
+  /* Fixed height for bubbles */
+  width: 50%;
 }
 
 .skill-bubble:hover {
-  transform: scale(1.5);
-  border: 4px solid #ff496c;
+  background-color: #ff496c;
+  /* Change background color on hover */
+  color: white;
+  /* Ensure text remains visible */
+  box-shadow: 0 3px 0 #d9405e, 0 3px 5px rgba(0, 0, 0, 0.3);
+  /* Adjust shadow on hover */
+  transform: translateY(-2px);
+  /* Bubble moves up slightly on hover */
 }
 
 /* Modal overlay */
@@ -94,48 +114,45 @@
 }
 
 .close-modal-btn:hover {
-  background-color: #0056b3;
+  background-color: #d9405e;
+  /* Change this to a hover color that fits your design */
 }
-
 
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
   .skills-list {
-    grid-template-columns: repeat(3, 1fr);
-    /* 3 columns on mobile */
+    grid-template-columns: repeat(2, 1fr);
+    /* 2 columns on mobile */
     gap: 10px;
     /* Decrease the gap for mobile */
     margin: 0;
     /* Remove margin to better fit the bubbles */
     padding: 0;
     /* Remove padding for mobile */
-    font-weight: bold;
   }
 
   .skill-bubble {
-    width: 8rem;
-    /* Adjust size for smaller screens */
-    height: 8rem;
-    font-size: .9rem;
-    /* Increase font size on mobile */
+    font-size: 1rem;
+    /* Adjust size for mobile */
+    height: 2.5rem;
+    /* Adjust height for mobile */
   }
 }
 
 @media (max-width: 480px) {
   .skills-list {
-    grid-template-columns: repeat(3, 1fr);
-    /* 3 columns on very small screens */
+    grid-template-columns: repeat(1, 1fr);
+    /* 1 column on very small screens */
     gap: 5px;
-
     /* Decrease the gap further if necessary */
   }
 
   .skill-bubble {
-    width: 6rem;
-    /* Make the bubbles smaller for very small screens */
-    height: 6rem;
-    font-size: 0.9rem;
+    height: 2rem;
 
+    margin: 10px;
+    /* Make the bubbles smaller for very small screens */
+    font-size: 0.8rem;
     /* Adjust font size for very small screens */
   }
 }

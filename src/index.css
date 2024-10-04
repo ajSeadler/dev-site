@@ -6,7 +6,7 @@
 }
 
 :root {
-  --background-gradient: linear-gradient(120deg, #ededed, #B2E2D8);
+  --background-gradient: linear-gradient(120deg, #ddd, #bbe6eb);
   /* Light mode gradient background */
   --text-color: #000000;
   --secondary-color: #2ecc71;

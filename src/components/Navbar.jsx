@@ -6,7 +6,10 @@ import '../styles/Navbar.css';
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
-    const [darkMode, setDarkMode] = useState(true);
+
+    // Check local storage for saved dark mode preference
+    const savedDarkMode = localStorage.getItem('darkMode') === 'true';
+    const [darkMode, setDarkMode] = useState(savedDarkMode);
 
     // Toggle mobile menu
     const toggleMenu = () => {
@@ -28,14 +31,17 @@ const Navbar = () => {
 
     // Toggle dark mode and update the body class
     const toggleDarkMode = () => {
-        setDarkMode(!darkMode);
+        setDarkMode((prevMode) => !prevMode);
     };
 
     useEffect(() => {
+        // Apply dark mode class based on state
         if (darkMode) {
             document.body.classList.add('dark-mode');
+            localStorage.setItem('darkMode', 'true'); // Save preference in local storage
         } else {
             document.body.classList.remove('dark-mode');
+            localStorage.setItem('darkMode', 'false'); // Save preference in local storage
         }
     }, [darkMode]);
 
@@ -61,30 +67,23 @@ const Navbar = () => {
 
             {/* Mobile Navbar */}
             <nav className="mobile-navbar">
-                <div className="navbar-brand">AJ<span className="last-name">Seadler</span>
-                </div>
+                <div className="navbar-brand">AJ<span className="last-name">Seadler</span></div>
                 <div className='drk-nav'>
-                <div className="navbar-hamburger" onClick={toggleMenu}>
-                    {isOpen ? <CloseIcon  /> : <MenuIcon />}
-                    
+                    <div className="navbar-hamburger" onClick={toggleMenu}>
+                        {isOpen ? <CloseIcon /> : <MenuIcon />}
+                    </div>
+                    <div className="toggle-container" style={{ marginLeft: '10px' }}> {/* Flex container for alignment */}
+                        <button onClick={toggleDarkMode} className="dark-mode-toggle mobile-toggle">
+                            {darkMode ? <FaMoon /> : <FaSun />}
+                        </button>
+                    </div>
                 </div>
-                <div className="toggle-container" style={{marginLeft:'10px'}}> {/* Flex container for alignment */}
-                    <button onClick={toggleDarkMode} className="dark-mode-toggle mobile-toggle">
-                        {darkMode ? <FaMoon /> : <FaSun />}
-                    </button>
-                </div>
-                </div>
-                {/* Add Dark Mode Toggle Button in mobile view */}
-                
             </nav>
 
             {/* Mobile Full-Screen Menu */}
             {isOpen && (
-                
                 <div className="mobile-menu">
-                    
                     <ul className="navbar-links">
-                        
                         <li><a href="#about" onClick={handleScroll}>About</a></li>
                         <li><a href="#projects" onClick={handleScroll}>Projects</a></li>
                         <li><a href="#skills" onClick={handleScroll}>Skills</a></li>
