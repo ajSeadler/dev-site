@@ -59,8 +59,7 @@
   font-size: 4rem;
   /* Base font size */
   /* Lighter weight for simplicity */
-  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
-  /* Softer shadow */
+
 }
 
 .job-title {

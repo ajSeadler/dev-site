@@ -80,13 +80,13 @@ function Skills() {
           className="line"
           initial={{ width: 0 }}
           animate={inView ? { width: "100%" } : { width: 0 }}
-          transition={{ duration: 1, ease: "easeOut" }}
+          transition={{ duration: 1, ease: [0.5, 0, 0.5, 1] }} // Custom easing
         />
         <motion.h1
           className="main-title"
           initial={{ opacity: 0, y: 50 }}
           animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-          transition={{ duration: 1 }}
+          transition={{ duration: 1, ease: [0.5, 0, 0.5, 1] }} // Custom easing
         >
           Skills
         </motion.h1>
@@ -94,7 +94,7 @@ function Skills() {
           className="line"
           initial={{ width: 0 }}
           animate={inView ? { width: "100%" } : { width: 0 }}
-          transition={{ duration: 1, ease: "easeOut" }}
+          transition={{ duration: 1, ease: [0.5, 0, 0.5, 1] }} // Custom easing
         />
       </div>
 
@@ -102,8 +102,8 @@ function Skills() {
       <motion.div
         className="click-indicator"
         initial={{ opacity: 0, y: 50 }}
-        animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: -10 }}
-        transition={{ duration: 1 }}
+        animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+        transition={{ duration: 1, ease: [0.5, 0, 0.5, 1] }} // Custom easing
       >
         Click on a skill for a random fact!
       </motion.div>
@@ -112,7 +112,7 @@ function Skills() {
         className="skills-list"
         initial={{ opacity: 0, y: 50 }}
         animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-        transition={{ duration: 1 }}
+        transition={{ duration: 1, ease: [0.5, 0, 0.5, 1] }} // Custom easing
       >
         {skills.map((skill, index) => (
           <motion.div
@@ -128,21 +128,16 @@ function Skills() {
             animate={
               inView
                 ? { opacity: 1, scale: 1, x: 0, y: 0 }
-                : {
-                    opacity: 0,
-                    scale: 0.8,
-                    x: `${Math.random() * 200 - 100}%`,
-                    y: `${Math.random() * 200 - 100}%`,
-                  }
+                : { opacity: 0, scale: 0.8 }
             }
             transition={{
               opacity: { duration: 0.5 },
-              scale: { type: "spring", stiffness: 150, damping: 20 },
+              scale: { type: "spring", stiffness: 100, damping: 2 },
               x: { type: "spring", stiffness: 80, damping: 20 },
               y: { type: "spring", stiffness: 80, damping: 20 },
             }}
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
+            whileHover={{ scale: 1.05 }} // Slight scale increase on hover
+            whileTap={{ scale: 0.95 }} // Slight scale decrease on tap
           >
             {skill}
           </motion.div>
