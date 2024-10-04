@@ -33,13 +33,13 @@
   height: 10rem;
   border-radius: 50%;
   background-color: transparent;
-  box-shadow: 0 3px 0 #d9405e, 0 3px 5px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 3px 0 #d9405e;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
   font-size: 1.1rem;
-  color: #fff;
+
   transition: transform 0.3s ease;
 }
 

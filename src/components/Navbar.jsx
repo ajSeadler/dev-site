@@ -53,7 +53,7 @@ const Navbar = () => {
                     {/* Add Dark Mode Toggle Button */}
                     <li>
                         <button onClick={toggleDarkMode} className="dark-mode-toggle">
-                            {darkMode ? <FaSun /> : <FaMoon />}
+                            {darkMode ? <FaMoon /> : <FaSun />}
                         </button>
                     </li>
                 </ul>
@@ -61,9 +61,18 @@ const Navbar = () => {
 
             {/* Mobile Navbar */}
             <nav className="mobile-navbar">
-                <div className="navbar-brand">AJ<span className="last-name">Seadler</span></div>
+                <div className="navbar-brand">AJ<span className="last-name">Seadler</span>
+                </div>
+                <div className='drk-nav'>
                 <div className="navbar-hamburger" onClick={toggleMenu}>
-                    {isOpen ? <CloseIcon style={{ color: '#ddd' }} /> : <MenuIcon style={{ color: '#ddd' }} />}
+                    {isOpen ? <CloseIcon  /> : <MenuIcon />}
+                    
+                </div>
+                <div className="toggle-container" style={{marginLeft:'10px'}}> {/* Flex container for alignment */}
+                    <button onClick={toggleDarkMode} className="dark-mode-toggle mobile-toggle">
+                        {darkMode ? <FaMoon /> : <FaSun />}
+                    </button>
+                </div>
                 </div>
                 {/* Add Dark Mode Toggle Button in mobile view */}
                 
@@ -71,12 +80,9 @@ const Navbar = () => {
 
             {/* Mobile Full-Screen Menu */}
             {isOpen && (
+                
                 <div className="mobile-menu">
-                    <div className="toggle-container"> {/* Flex container for alignment */}
-                    <button onClick={toggleDarkMode} className="dark-mode-toggle mobile-toggle">
-                        {darkMode ? <FaSun /> : <FaMoon />}
-                    </button>
-                </div>
+                    
                     <ul className="navbar-links">
                         
                         <li><a href="#about" onClick={handleScroll}>About</a></li>

@@ -141,14 +141,14 @@
 .project-info-card,
 .second-project-info-card {
   border-radius: 10px;
-  border: 1px solid #fff;
+  border: 1px solid var(--card-border-color);
   padding: 30px;
   /* Increased padding */
   max-width: 50%;
   /* Set max width */
   margin: auto;
   /* Center the card */
-  color: #fff;
+
   /* Text color */
 }
 
@@ -160,14 +160,14 @@
 .project-title {
   font-size: 2rem;
   margin-bottom: 15px;
-  color: #fff;
+
   text-decoration: underline;
 }
 
 .project-description {
   font-size: 1.2rem;
   margin-bottom: 20px;
-  color: #f0f0f0ce;
+
 }
 
 /* Highlight text styling */

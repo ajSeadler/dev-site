@@ -6,7 +6,7 @@
 }
 
 :root {
-  --background-gradient: linear-gradient(120deg, #A2C2E9, #B2E2D8);
+  --background-gradient: linear-gradient(120deg, #ededed, #B2E2D8);
   /* Light mode gradient background */
   --text-color: #000000;
   --secondary-color: #2ecc71;
@@ -31,6 +31,7 @@ body.dark-mode {
   background: linear-gradient(120deg, #0d0d0d, #2A1E5C);
   background-size: cover;
   background-position: center;
+  --card-border-color: #fff;
   background-attachment: fixed;
   /* Keeps the background fixed during scroll */
 }
@@ -43,6 +44,8 @@ body {
   background: var(--background-gradient);
   /* Dynamic background color */
   color: var(--text-color);
+  --card-border-color: #000;
+  /* Dark mode border color */
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -89,5 +92,5 @@ a {
   cursor: pointer;
   color: var(--text-color);
   /* Dynamic toggle button color */
-  font-size: 2rem;
+  font-size: 1.2rem;
 }
