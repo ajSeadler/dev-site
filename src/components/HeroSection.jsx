@@ -96,7 +96,7 @@ function HeroSection() {
         </motion.a>
         </div>
       </div>
-      <motion.div
+      {/* <motion.div
         className="image-container"
         variants={imageVariant}
         initial="hidden"
@@ -108,7 +108,7 @@ function HeroSection() {
           alt="Anthony Seadler"
           className="profile-image"
         />
-      </motion.div>
+      </motion.div> */}
     </div>
   );
 }

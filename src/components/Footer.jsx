@@ -8,7 +8,7 @@ const Footer = () => {
       
 
       <div className="footer-bottom">
-      <p>Made with ❤️ in Oklahoma City</p>
+    
         <p>&copy; {new Date().getFullYear()} Anthony Seadler. All Rights Reserved.</p>
       </div>
     </footer>
