@@ -110,9 +110,9 @@ function Skills() {
 
       <motion.div
         className="skills-list"
-        initial={{ opacity: 0, y: 50 }}
+        initial={false} // Prevents blinking due to re-initialization
         animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-        transition={{ duration: 1, ease: [0.5, 0, 0.5, 1] }} // Custom easing
+        transition={{ duration: 1, ease: [0.5, 0, 0.5, 1] }}
       >
         {skills.map((skill, index) => (
           <motion.div
