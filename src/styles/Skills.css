@@ -25,9 +25,7 @@
   font-weight: bold;
   opacity: 0;
   /* Ensure it's hidden initially */
-  transform: translateY(50px);
-  /* Optional: For smoother animation */
-  transition: opacity 0.5s ease, transform 0.5s ease;
+
   padding: 20px;
   justify-items: center;
   /* Center items in the grid */
