@@ -62,6 +62,7 @@
   align-items: flex-start;
   /* Align images to the top */
   justify-content: space-around;
+
   /* Distribute space evenly */
   width: 100%;
   flex-wrap: wrap;
@@ -93,6 +94,7 @@
   width: auto;
   /* Maintain aspect ratio */
   height: 600px;
+  filter: drop-shadow(0 0 20px rgba(73, 255, 118, 0.3));
   /* Fixed height */
 }
 
@@ -106,6 +108,7 @@
   margin: auto;
   /* Center images */
   margin-top: 8%;
+  filter: drop-shadow(0 0 20px rgba(73, 255, 118, 0.3));
 }
 
 .second-project-image {

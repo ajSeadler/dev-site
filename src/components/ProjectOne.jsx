@@ -21,7 +21,7 @@ function ProjectOne() {
 
   return (
     <div className="project-one-section" ref={projectRef}>
-        <div className="main-title-container">
+      <div className="main-title-container">
         <motion.div
           className="line"
           initial={{ width: 0 }}
@@ -51,12 +51,23 @@ function ProjectOne() {
       >
         <h2 className="project-title">Circle of Fifths Viewer</h2>
         <p className="project-description">
-          The Circle of Fifths Viewer is a web application I developed to help users visualize and understand the relationships between musical keys. This interactive tool features an intuitive interface that allows users to explore the Circle of Fifths, view chord progressions within the key they choose, and easily transpose music between different keys. Built with{" "}
-          <span className="highlight">JavaScript</span>,{" "}
+          The Circle of Fifths Viewer is a web application I developed to help
+          users visualize and understand the relationships between musical keys.
+          This interactive tool features an intuitive interface that allows
+          users to explore the Circle of Fifths, view chord progressions within
+          the key they choose, and easily transpose music between different
+          keys. Built with <span className="highlight">JavaScript</span>,{" "}
           <span className="highlight">React</span>, and{" "}
-          <span className="highlight">CSS</span>, this project showcases my skills in front-end development, object-oriented programming, and my passion for music theory.
+          <span className="highlight">CSS</span>, this project showcases my
+          skills in front-end development, object-oriented programming, and my
+          passion for music theory.
         </p>
-        <a href="https://circleoffifthsviewer.com" className="project-link" target="_blank" rel="noopener noreferrer">
+        <a
+          href="https://circleoffifthsviewer.com"
+          className="project-link"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           View Site
         </a>
       </motion.div>
@@ -74,7 +85,8 @@ function ProjectOne() {
           <div className="text-container-projects">
             <h3 className="project-subtitle">Easy Navigation</h3>
             <p className="project-text">
-              The homepage offers a simple and intuitive layout, allowing users to quickly explore the Circle of Fifths and access features.
+              The homepage offers a simple and intuitive layout, allowing users
+              to quickly explore the Circle of Fifths and access features.
             </p>
           </div>
         </motion.div>
@@ -89,9 +101,13 @@ function ProjectOne() {
             <img src="/3.png" alt="Scale Selection" />
           </div>
           <div className="text-container-projects">
-            <h3 className="project-subtitle">Circle of Fifths & Scale Selection</h3>
+            <h3 className="project-subtitle">
+              Circle of Fifths & Scale Selection
+            </h3>
             <p className="project-text">
-              Users can interact with the Circle of Fifths chart to select a key and corresponding scale, providing an educational tool for exploring music theory.
+              Users can interact with the Circle of Fifths chart to select a key
+              and corresponding scale, providing an educational tool for
+              exploring music theory.
             </p>
           </div>
         </motion.div>
@@ -107,7 +123,9 @@ function ProjectOne() {
           <div className="text-container-projects">
             <h3 className="project-subtitle">Chord & Interval Display</h3>
             <p className="project-text">
-              Based on the selected key and scale, the app displays chords and intervals, giving users a detailed breakdown of musical components.
+              Based on the selected key and scale, the app displays chords and
+              intervals, giving users a detailed breakdown of musical
+              components.
             </p>
           </div>
         </motion.div>

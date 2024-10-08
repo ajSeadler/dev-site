@@ -1,0 +1,261 @@
+/* General Styling */
+.profilePage {
+  font-family: Arial, sans-serif;
+  width: 75vw;
+  margin: auto;
+  padding: 20px;
+}
+
+/* Cover Photo */
+.coverPhotoContainer {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+}
+
+.coverPhoto {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Profile Info */
+.profileInfo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
+  /* Remove negative margin and add proper spacing */
+  padding: 0 20px;
+  flex-wrap: wrap;
+}
+
+.profilePictureContainer {
+  border: 5px solid white;
+  border-radius: 50%;
+  overflow: hidden;
+  width: 160px;
+  height: 160px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 10px;
+}
+
+.profilePicture {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profileDetails {
+  flex-grow: 1;
+  margin-left: 20px;
+  padding-top: 20px;
+}
+
+.profileName {
+  font-size: 2rem;
+  margin-bottom: 5px;
+}
+
+.profileBio {
+  font-size: 1rem;
+}
+
+/* Navigation Bar */
+.navBar {
+  margin-top: 20px;
+  border-bottom: 1px solid #dfe3ee;
+  padding-bottom: 10px;
+}
+
+.navLinks {
+  display: flex;
+  justify-content: space-around;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.navLinks li {
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.navLinks .active {
+  border-bottom: 2px solid #ff496c;
+  color: #ff496c;
+}
+
+/* About Section */
+.aboutSection {
+  margin: 20px 0;
+  padding: 0 20px;
+}
+
+.sectionTitle {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+.infoBlock {
+  margin-bottom: 20px;
+}
+
+.infoTitle {
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.educationItem {
+  margin-bottom: 15px;
+}
+
+.institution {
+  font-size: 1.2rem;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.degree {
+  font-size: 1rem;
+  margin-bottom: 5px;
+}
+
+.location {
+  font-size: 0.9rem;
+  color: #f2f2f2;
+}
+
+.blogSection {
+  margin-top: 20px;
+}
+
+.sectionTitle {
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+.blogPost {
+  margin-bottom: 20px;
+}
+
+.blogTitle {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.blogExcerpt {
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.readMore {
+  font-size: 1rem;
+  color: #1877f2;
+  text-decoration: none;
+}
+
+.readMore:hover {
+  text-decoration: underline;
+}
+
+
+/* Media Queries for Mobile */
+@media (max-width: 768px) {
+  .profilePage {
+    width: 100%;
+    padding: 20px;
+  }
+
+  /* Adjust Cover Photo */
+  .coverPhotoContainer {
+    height: 200px;
+  }
+
+  /* Profile Info Adjustments */
+  .profileInfo {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 20px;
+    /* Ensuring space between profile and cover photo */
+  }
+
+  .profilePictureContainer {
+    width: 120px;
+    height: 120px;
+  }
+
+  .profileDetails {
+    margin-left: 0;
+    padding-top: 10px;
+  }
+
+  .profileName {
+    font-size: 1.5rem;
+  }
+
+  .profileBio {
+    font-size: 0.9rem;
+  }
+
+  /* Navigation Bar Adjustments */
+  .navLinks {
+    justify-content: center;
+  }
+
+  .navLinks li {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+
+  /* About Section */
+  .aboutSection {
+    padding: 0;
+  }
+
+  .sectionTitle {
+    font-size: 1.2rem;
+  }
+
+  .infoBlock h3 {
+    font-size: 1rem;
+  }
+
+  .infoBlock p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+
+  /* Extra mobile adjustments for very small screens */
+  .profileInfo {
+    padding: 0 10px;
+  }
+
+  .profilePictureContainer {
+    width: 100px;
+    height: 100px;
+  }
+
+  .profileName {
+    font-size: 1.25rem;
+  }
+
+  .profileBio {
+    font-size: 0.8rem;
+  }
+
+  .navLinks li {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+  }
+}

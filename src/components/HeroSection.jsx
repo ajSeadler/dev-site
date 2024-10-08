@@ -69,7 +69,7 @@ function HeroSection() {
           variants={textVariant}
           custom={3} // Custom prop for staggered animation
         >
-          Full Stack Developer <br /> Network Technician
+          Full Stack Developer <br /> Oklahoma City, OK
         </motion.h3>
         <motion.p
           className="description"
