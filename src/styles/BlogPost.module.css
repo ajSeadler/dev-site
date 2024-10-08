@@ -4,6 +4,10 @@
   padding: 20px;
 }
 
+.blogPost ul {
+  list-style: none !important;
+}
+
 .title {
   font-size: 2rem;
   font-weight: bold;

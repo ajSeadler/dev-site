@@ -143,6 +143,7 @@
 
 .blogPost {
   margin-bottom: 20px;
+  width: 50%;
 }
 
 .blogTitle {
@@ -231,6 +232,10 @@
 
   .infoBlock p {
     font-size: 0.9rem;
+  }
+
+  .blogPost {
+    width: 100%;
   }
 }
 

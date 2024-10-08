@@ -33,8 +33,7 @@ const blogPosts = [
 
       <h2>Conclusion: The Path Forward</h2>
       <p>My journey into fullstack development is just beginning. I’ve learned a lot, but there will <strong>always</strong> be more to discover. By focusing on fullstack applications, I can continue to expand my knowledge in both frontend and backend technologies. As I move forward, my goal is to continue building projects, experimenting with new tools, and becoming a versatile developer capable of building more advanced and complex applications.</p>
-
-      <p>Ultimately, the journey into fullstack development has been about growth, perseverance, and the joy of creating things. And while there’s always more to learn, the foundation I’ve built will serve me for years to come.</p>
+      
       <br></br>
       <h3>Links on topics I discussed:</h3>
       <ul>

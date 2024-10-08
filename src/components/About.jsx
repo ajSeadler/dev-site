@@ -1,22 +1,42 @@
 import React, { useState } from "react";
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { Link } from "react-router-dom"; // Import Link for routing
 import styles from "../styles/About.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
-import { FaBriefcase, FaPen, FaStar } from "react-icons/fa";
+import { FaBriefcase, FaPen } from "react-icons/fa";
+import { useRef } from "react";
 
 const About = () => {
   const [activeTab, setActiveTab] = useState("about");
+
+  // Ref for in view animations
+  const aboutRef = useRef(null);
+  const isInView = useInView(aboutRef, { once: true });
 
   // Handlers to switch between tabs
   const switchTab = (tab) => {
     setActiveTab(tab);
   };
 
+  const animationVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0 },
+  };
+
   return (
     <div className={styles.profilePage}>
+      {/* <div className={styles.coverPhotoContainer}>
+        <motion.img
+          src="/colorado.JPG"
+          alt="Cover Photo"
+          className={styles.coverPhoto}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1.5 }}
+        />
+      </div> */}
       {/* Profile Info */}
       <div className={styles.profileInfo}>
         {/* Profile Picture */}
@@ -59,13 +79,6 @@ const About = () => {
             <FaPen style={{ marginRight: "8px" }} />
             Blog
           </li>
-          {/* <li
-            className={activeTab === "favorite-articles" ? styles.active : ""}
-            onClick={() => switchTab("favorite-articles")}
-          >
-            <FaStar style={{ marginRight: "8px" }} />
-            Favorite Articles
-          </li> */}
         </ul>
       </div>
 
@@ -73,7 +86,14 @@ const About = () => {
       <div className={styles.aboutSection}>
         {activeTab === "about" && (
           <>
-            <div className={styles.infoBlock}>
+            <motion.div
+              className={styles.infoBlock}
+              ref={aboutRef}
+              variants={animationVariants}
+              initial="hidden"
+              animate={isInView ? "visible" : "hidden"}
+              transition={{ duration: 0.6 }}
+            >
               <h3 className={styles.infoTitle}>Work and Education</h3>
 
               <div className={styles.educationItem}>
@@ -107,14 +127,29 @@ const About = () => {
                 </p>
                 <p className={styles.location}>Louisville, Kentucky</p>
               </div>
-            </div>
+            </motion.div>
 
-            <div className={styles.infoBlock}>
+            <motion.div
+              className={styles.infoBlock}
+              ref={aboutRef}
+              variants={animationVariants}
+              initial="hidden"
+              animate={isInView ? "visible" : "hidden"}
+              transition={{ duration: 0.6 }}
+            >
               <h3>Location</h3>
               <p>Lives in Oklahoma City, OK</p>
               <p>From Louisville, KY</p>
-            </div>
-            <div className={styles.infoBlock}>
+            </motion.div>
+
+            <motion.div
+              className={styles.infoBlock}
+              ref={aboutRef}
+              variants={animationVariants}
+              initial="hidden"
+              animate={isInView ? "visible" : "hidden"}
+              transition={{ duration: 0.6 }}
+            >
               <h3>Contact Information</h3>
               <p>
                 <FontAwesomeIcon
@@ -151,55 +186,33 @@ const About = () => {
                   LinkedIn
                 </a>
               </p>
-            </div>
+            </motion.div>
           </>
         )}
 
         {activeTab === "blog" && (
-          <>
-            {/* Blog Post 1 */}
-            <div className={styles.blogPost}>
-              <h3 className={styles.blogTitle}>
-                My Journey into Fullstack Development: From Novice to Tech
-                Enthusiast
-              </h3>
-              <p className={styles.blogExcerpt}>
-                My journey into fullstack development has been a rollercoaster
-                of learning new technologies, tackling challenges, and
-                continuously improving my skills. In this post, I’ll share my
-                experience as I transitioned into the tech field and how I
-                navigate the learning curve of fullstack development.
-              </p>
-              <a href="/blog/1" className={styles.readMore}>
-                Read More
-              </a>
-            </div>
-          </>
-        )}
-
-        {activeTab === "favorite-articles" && (
-          <>
-            <h2 className={styles.sectionTitle}>Favorite Articles</h2>
-            <p>
-              These are some of my favorite articles on topics such as
-              development, technology, and more:
+          <motion.div
+            className={styles.blogPost}
+            variants={animationVariants}
+            initial="hidden"
+            animate={isInView ? "visible" : "hidden"}
+            transition={{ duration: 0.6 }}
+          >
+            <h3 className={styles.blogTitle}>
+              My Journey into Fullstack Development: From Novice to Tech
+              Enthusiast
+            </h3>
+            <p className={styles.blogExcerpt}>
+              My journey into fullstack development has been a rollercoaster of
+              learning new technologies, tackling challenges, and continuously
+              improving my skills. In this post, I’ll share my experience as I
+              transitioned into the tech field and how I navigate the learning
+              curve of fullstack development.
             </p>
-            <ul>
-              <li>
-                <a href="https://example.com/article1">
-                  How to Build a Fullstack App
-                </a>
-              </li>
-              <li>
-                <a href="https://example.com/article2">
-                  The Future of AI in Web Development
-                </a>
-              </li>
-              <li>
-                <a href="https://example.com/article3">Why Learn TypeScript</a>
-              </li>
-            </ul>
-          </>
+            <a href="/blog/1" className={styles.readMore}>
+              Read More
+            </a>
+          </motion.div>
         )}
       </div>
     </div>
