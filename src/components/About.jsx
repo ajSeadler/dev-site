@@ -72,13 +72,13 @@ const About = () => {
             <FaBriefcase style={{ marginRight: "8px" }} />
             About
           </li>
-          {/* <li
-            className={activeTab === "blog" ? styles.active : ""}
-            onClick={() => switchTab("blog")}
+          <li
+            className={activeTab === "hobbies" ? styles.active : ""}
+            onClick={() => switchTab("hobbies")}
           >
             <FaPen style={{ marginRight: "8px" }} />
-            Blog
-          </li> */}
+            Hobbies
+          </li>
         </ul>
       </div>
 
@@ -198,20 +198,13 @@ const About = () => {
             animate={isInView ? "visible" : "hidden"}
             transition={{ duration: 0.6 }}
           >
-            <h3 className={styles.blogTitle}>
-              My Journey into Fullstack Development: From Novice to Tech
-              Enthusiast
-            </h3>
+            <h3 className={styles.blogTitle}>Hobbies!</h3>
             <p className={styles.blogExcerpt}>
-              My journey into fullstack development has been a rollercoaster of
-              learning new technologies, tackling challenges, and continuously
-              improving my skills. In this post, I’ll share my experience as I
-              transitioned into the tech field and how I navigate the learning
-              curve of fullstack development.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Voluptatibus expedita similique unde vero aut voluptas nulla
+              dolorum cumque veniam laudantium, odit, rem, est repellat natus
+              provident. Nobis velit aliquam ipsum.
             </p>
-            <a href="/blog/1" className={styles.readMore}>
-              Read More
-            </a>
           </motion.div>
         )}
       </div>
