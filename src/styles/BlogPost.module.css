@@ -1,49 +1,56 @@
-.blogPost {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 20px;
+/* Hobbies Section Styles */
+.hobbiesSection {
+  margin-top: 30px;
 }
 
-.blogPost ul {
-  list-style: none !important;
-}
-
-.title {
+.sectionTitle {
   font-size: 2rem;
   font-weight: bold;
   margin-bottom: 20px;
+  text-align: center;
 }
 
-
-.content {
-  font-size: 1.125rem;
-  line-height: 1.6;
-  margin-bottom: 20px;
+.hobbiesList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+  justify-content: center;
+  /* Centers the items horizontally */
 }
 
-.content h3 {
+.hobbiesList li {
+  display: flex;
+  flex-direction: column;
+  /* Stack the content vertically (icon above text) */
+  align-items: center;
+  /* Center content horizontally */
+  justify-content: center;
+  /* Center content vertically */
+  border-radius: 10px;
+  border: 2px solid #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  flex: 1 1 calc(33.333% - 20px);
+  min-width: 250px;
   font-size: 1.3rem;
-  margin: 5px;
+  max-width: 350px;
+  /* Set a maximum width to keep cards consistent */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+  /* Center the text inside the cards */
 }
 
-.backButton {
-  display: inline-block;
-  padding: 10px 20px;
-  font-size: 1rem;
-  font-style: bolder !important;
-  background-color: #ff496c;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+.hobbiesList li:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
 }
 
-.backButton:hover {
-  background-color: #cf97a2;
-}
-
-.backButton:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px rgba(38, 143, 255, 0.5);
+.hobbiesList li .icon {
+  font-size: 3rem;
+  /* Slightly larger icons */
+  color: #ff496c;
+  margin-bottom: 10px;
+  /* Space between icon and text */
 }

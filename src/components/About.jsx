@@ -1,12 +1,16 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { Link } from "react-router-dom"; // Import Link for routing
-import styles from "../styles/About.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import {
+  faEnvelope,
+  faGuitar,
+  faNetworkWired,
+  faDog,
+} from "@fortawesome/free-solid-svg-icons";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { FaBriefcase, FaPen } from "react-icons/fa";
-import { useRef } from "react";
+import aboutStyles from "../styles/About.module.css"; // Updated import
+import blogPostStyles from "../styles/BlogPost.module.css"; // Updated import
 
 const About = () => {
   const [activeTab, setActiveTab] = useState("about");
@@ -26,22 +30,12 @@ const About = () => {
   };
 
   return (
-    <div className={styles.profilePage}>
-      {/* <div className={styles.coverPhotoContainer}>
-        <motion.img
-          src="/colorado.JPG"
-          alt="Cover Photo"
-          className={styles.coverPhoto}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1.5 }}
-        />
-      </div> */}
+    <div className={aboutStyles.profilePage}>
       {/* Profile Info */}
-      <div className={styles.profileInfo}>
+      <div className={aboutStyles.profileInfo}>
         {/* Profile Picture */}
         <motion.div
-          className={styles.profilePictureContainer}
+          className={aboutStyles.profilePictureContainer}
           initial={{ scale: 0.8 }}
           animate={{ scale: 1 }}
           transition={{ duration: 0.5 }}
@@ -49,31 +43,31 @@ const About = () => {
           <img
             src="/portrait.jpg"
             alt="Profile"
-            className={styles.profilePicture}
+            className={aboutStyles.profilePicture}
           />
         </motion.div>
 
         {/* Name and Bio */}
-        <div className={styles.profileDetails}>
-          <h1 className={styles.profileName}>Anthony Seadler</h1>
-          <p className={styles.profileBio}>
+        <div className={aboutStyles.profileDetails}>
+          <h1 className={aboutStyles.profileName}>Anthony Seadler</h1>
+          <p className={aboutStyles.profileBio}>
             Fullstack Developer | Network Enthusiast | Musician
           </p>
         </div>
       </div>
 
       {/* Navigation Bar */}
-      <div className={styles.navBar}>
-        <ul className={styles.navLinks}>
+      <div className={aboutStyles.navBar}>
+        <ul className={aboutStyles.navLinks}>
           <li
-            className={activeTab === "about" ? styles.active : ""}
+            className={activeTab === "about" ? aboutStyles.active : ""}
             onClick={() => switchTab("about")}
           >
             <FaBriefcase style={{ marginRight: "8px" }} />
             About
           </li>
           <li
-            className={activeTab === "hobbies" ? styles.active : ""}
+            className={activeTab === "hobbies" ? aboutStyles.active : ""}
             onClick={() => switchTab("hobbies")}
           >
             <FaPen style={{ marginRight: "8px" }} />
@@ -83,54 +77,56 @@ const About = () => {
       </div>
 
       {/* Content based on active tab */}
-      <div className={styles.aboutSection}>
+      <div className={aboutStyles.aboutSection}>
         {activeTab === "about" && (
           <>
             <motion.div
-              className={styles.infoBlock}
+              className={aboutStyles.infoBlock}
               ref={aboutRef}
               variants={animationVariants}
               initial="hidden"
               animate={isInView ? "visible" : "hidden"}
               transition={{ duration: 0.6 }}
             >
-              <h3 className={styles.infoTitle}>Work and Education</h3>
+              <h3 className={aboutStyles.infoTitle}>Work and Education</h3>
 
-              <div className={styles.educationItem}>
-                <h4 className={styles.institution}>
+              <div className={aboutStyles.educationItem}>
+                <h4 className={aboutStyles.institution}>
                   Southern Nazarene University
                 </h4>
-                <p className={styles.degree}>
+                <p className={aboutStyles.degree}>
                   Bachelor's of Science in Cybersecurity (Expected Graduation:
                   December 2026)
                 </p>
-                <p className={styles.location}>Bethany, Oklahoma</p>
+                <p className={aboutStyles.location}>Bethany, Oklahoma</p>
               </div>
 
-              <div className={styles.educationItem}>
-                <h4 className={styles.institution}>
+              <div className={aboutStyles.educationItem}>
+                <h4 className={aboutStyles.institution}>
                   Fullstack Academy (University of Oklahoma)
                 </h4>
-                <p className={styles.degree}>
+                <p className={aboutStyles.degree}>
                   Full Stack Immersive Web Development Boot Camp | June 2023 -
                   December 2023
                 </p>
-                <p className={styles.location}>
+                <p className={aboutStyles.location}>
                   Online, Partnered with University of Oklahoma
                 </p>
               </div>
 
-              <div className={styles.educationItem}>
-                <h4 className={styles.institution}>University of Louisville</h4>
-                <p className={styles.degree}>
+              <div className={aboutStyles.educationItem}>
+                <h4 className={aboutStyles.institution}>
+                  University of Louisville
+                </h4>
+                <p className={aboutStyles.degree}>
                   60 Credit Hours in Communications (2015-2017)
                 </p>
-                <p className={styles.location}>Louisville, Kentucky</p>
+                <p className={aboutStyles.location}>Louisville, Kentucky</p>
               </div>
             </motion.div>
 
             <motion.div
-              className={styles.infoBlock}
+              className={aboutStyles.infoBlock}
               ref={aboutRef}
               variants={animationVariants}
               initial="hidden"
@@ -143,7 +139,7 @@ const About = () => {
             </motion.div>
 
             <motion.div
-              className={styles.infoBlock}
+              className={aboutStyles.infoBlock}
               ref={aboutRef}
               variants={animationVariants}
               initial="hidden"
@@ -190,21 +186,65 @@ const About = () => {
           </>
         )}
 
-        {activeTab === "blog" && (
+        {activeTab === "hobbies" && (
           <motion.div
-            className={styles.blogPost}
+            className={blogPostStyles.hobbiesSection} // Updated for blogPost styles
             variants={animationVariants}
             initial="hidden"
             animate={isInView ? "visible" : "hidden"}
             transition={{ duration: 0.6 }}
           >
-            <h3 className={styles.blogTitle}>Hobbies!</h3>
-            <p className={styles.blogExcerpt}>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Voluptatibus expedita similique unde vero aut voluptas nulla
-              dolorum cumque veniam laudantium, odit, rem, est repellat natus
-              provident. Nobis velit aliquam ipsum.
-            </p>
+            <h3 className={blogPostStyles.sectionTitle}>Hobbies & Interests</h3>
+            <ul className={blogPostStyles.hobbiesList}>
+              <li>
+                <FontAwesomeIcon
+                  icon={faGuitar}
+                  style={{
+                    marginRight: "8px",
+                    color: "#ff496c",
+                    fontSize: "2rem",
+                    margin: "5%",
+                  }}
+                />
+                Playing guitar in a band called Disco Stranger (Oklahoma City)
+              </li>
+              <li>
+                <FontAwesomeIcon
+                  icon={faGuitar}
+                  style={{
+                    marginRight: "8px",
+                    color: "#ff496c",
+                    fontSize: "2rem",
+                    margin: "5%",
+                  }}
+                />
+                Avid skateboarder
+              </li>
+              <li>
+                <FontAwesomeIcon
+                  icon={faNetworkWired}
+                  style={{
+                    marginRight: "8px",
+                    color: "#ff496c",
+                    fontSize: "2rem",
+                    margin: "5%",
+                  }}
+                />
+                Enhancing home network and hardwiring Ethernet connections
+              </li>
+              <li>
+                <FontAwesomeIcon
+                  icon={faDog}
+                  style={{
+                    marginRight: "8px",
+                    color: "#ff496c",
+                    fontSize: "2rem",
+                    margin: "5%",
+                  }}
+                />
+                Spending time with 2 dogs, 2 cats, and my wife
+              </li>
+            </ul>
           </motion.div>
         )}
       </div>
