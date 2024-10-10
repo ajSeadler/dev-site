@@ -10,7 +10,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/blog/:postId" element={<BlogPost />} />
+        {/* <Route path="/blog/:postId" element={<BlogPost />} /> */}
       </Routes>
       <Footer />
     </Router>

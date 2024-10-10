@@ -72,13 +72,13 @@ const About = () => {
             <FaBriefcase style={{ marginRight: "8px" }} />
             About
           </li>
-          <li
+          {/* <li
             className={activeTab === "blog" ? styles.active : ""}
             onClick={() => switchTab("blog")}
           >
             <FaPen style={{ marginRight: "8px" }} />
             Blog
-          </li>
+          </li> */}
         </ul>
       </div>
 
