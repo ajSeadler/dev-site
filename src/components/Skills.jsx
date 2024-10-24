@@ -4,14 +4,17 @@ import "../styles/Skills.css";
 
 function Skills() {
   const [inView, setInView] = useState(false);
+  const [randomFact, setRandomFact] = useState("");
+  const [showModal, setShowModal] = useState(false);
+  const [loading, setLoading] = useState(false);
   const skillsRef = useRef(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setInView(true); // Set inView to true once the section is in view
-          observer.disconnect(); // Stop observing after entering the view
+          setInView(true);
+          observer.disconnect();
         }
       },
       { threshold: 0.1 }
@@ -43,6 +46,33 @@ function Skills() {
     "CI/CD",
   ];
 
+  // Function to fetch a random fact
+  const fetchRandomFact = async () => {
+    setLoading(true); // Set loading to true before the fetch
+    try {
+      const response = await fetch(
+        "https://uselessfacts.jsph.pl/random.json?language=en"
+      );
+      const data = await response.json();
+      setRandomFact(data.text); // Set the random fact from the API response
+    } catch (error) {
+      setRandomFact("Sorry, couldn't fetch a fact right now.");
+    } finally {
+      setLoading(false); // Reset loading state after fetching
+    }
+  };
+
+  // Function to handle skill click and show the modal
+  const handleSkillClick = () => {
+    fetchRandomFact(); // Fetch random fact when a skill is clicked
+    setShowModal(true); // Show the modal
+  };
+
+  // Close modal
+  const closeModal = () => {
+    setShowModal(false);
+  };
+
   // Animation variants for the skill bubbles
   const skillVariants = {
     hidden: { opacity: 0, y: 20 },
@@ -56,7 +86,6 @@ function Skills() {
   return (
     <div id="skills" className="skills-section" ref={skillsRef}>
       <div className="main-title-container">
-        {/* Line animation above and below the title */}
         <motion.div
           className="line"
           initial={{ width: 0 }}
@@ -83,7 +112,7 @@ function Skills() {
       <motion.div
         className="skills-list"
         initial="hidden"
-        animate={inView ? "visible" : "hidden"} // Trigger visibility based on inView state
+        animate={inView ? "visible" : "hidden"}
         variants={{
           hidden: { opacity: 0 },
           visible: { opacity: 1, transition: { staggerChildren: 0.1 } },
@@ -94,14 +123,32 @@ function Skills() {
             className="skill-bubble"
             key={index}
             variants={skillVariants}
-            custom={index} // Staggering effect for each skill bubble
-            whileHover={{ scale: 1.05 }} // Hover effect
-            whileTap={{ scale: 0.95 }} // Tap effect
+            custom={index}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            onClick={handleSkillClick} // Add click handler
           >
             {skill}
           </motion.div>
         ))}
       </motion.div>
+
+      {/* Modal for displaying the random fact */}
+      {showModal && (
+        <div className="modal-overlay">
+          <div className="modal-content">
+            <h2>Random Fact</h2>
+            {loading ? (
+              <div className="spinner"></div> // Spinner while loading
+            ) : (
+              <p>{randomFact}</p>
+            )}
+            <button className="close-modal-btn" onClick={closeModal}>
+              Close
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
