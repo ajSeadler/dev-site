@@ -92,7 +92,7 @@ function HeroSection() {
             className="resume-button"
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 1, duration: 0.5 }}
+            transition={{ delay: 1, duration: 1 }}
           >
             Resume
           </motion.a>

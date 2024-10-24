@@ -7,7 +7,7 @@ function Skills() {
   const [inView, setInView] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const [randomFact, setRandomFact] = useState("");
-  const [loading, setLoading] = useState(false); // State to manage loading
+  const [loading, setLoading] = useState(false);
   const skillsRef = useRef(null);
 
   // Intersection observer logic for animation
@@ -30,7 +30,6 @@ function Skills() {
     };
   }, []);
 
-  // Skills list
   const skills = [
     "JavaScript",
     "React.js",
@@ -48,108 +47,61 @@ function Skills() {
 
   // Function to fetch a random fact
   const fetchRandomFact = async () => {
-    setLoading(true); // Set loading to true before the fetch
+    setLoading(true);
     try {
       const response = await fetch(
         "https://uselessfacts.jsph.pl/random.json?language=en"
       );
       const data = await response.json();
-      setRandomFact(data.text); // Set the random fact from the API response
+      setRandomFact(data.text);
     } catch (error) {
       setRandomFact("Sorry, couldn't fetch a fact right now.");
     } finally {
-      setLoading(false); // Reset loading state after fetching
+      setLoading(false);
     }
   };
 
-  // Function to handle skill click and show the modal
   const handleSkillClick = () => {
-    fetchRandomFact(); // Fetch random fact when a skill is clicked
-    setShowModal(true); // Show the modal
+    fetchRandomFact();
+    setShowModal(true);
   };
 
-  // Close modal
-  const closeModal = () => {
-    setShowModal(false);
-  };
+  const closeModal = () => setShowModal(false);
 
   return (
     <div id="skills" className="skills-section" ref={skillsRef}>
-      <div className="main-title-container">
-        <motion.div
-          className="line"
-          initial={{ width: 0 }}
-          animate={inView ? { width: "100%" } : { width: 0 }}
-          transition={{ duration: 1, ease: [0.5, 0, 0.5, 1] }} // Custom easing
-        />
-        <motion.h1
-          className="main-title"
-          initial={{ opacity: 0, y: 50 }}
-          animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-          transition={{ duration: 1, ease: [0.5, 0, 0.5, 1] }} // Custom easing
-        >
-          Skills
-        </motion.h1>
-        <motion.div
-          className="line"
-          initial={{ width: 0 }}
-          animate={inView ? { width: "100%" } : { width: 0 }}
-          transition={{ duration: 1, ease: [0.5, 0, 0.5, 1] }} // Custom easing
-        />
-      </div>
-
-      {/* Motion Indicator Message */}
       <motion.div
-        className="click-indicator"
+        className="main-title-container"
         initial={{ opacity: 0, y: 50 }}
         animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-        transition={{ duration: 1, ease: [0.5, 0, 0.5, 1] }} // Custom easing
+        transition={{ duration: 0.6 }} // Simpler easing and duration
       >
-        Click on a skill for a random fact!
+        <h1 className="main-title">Skills</h1>
       </motion.div>
 
       <motion.div
         className="skills-list"
-        initial={false} // Prevents blinking due to re-initialization
-        animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-        transition={{ duration: 1, ease: [0.5, 0, 0.5, 1] }}
+        initial={{ opacity: 0 }}
+        animate={inView ? { opacity: 1 } : { opacity: 0 }}
+        transition={{ duration: 0.6 }} // Simplified animation
       >
         {skills.map((skill, index) => (
           <motion.div
             className="skill-bubble"
             key={index}
             onClick={handleSkillClick}
-            initial={{
-              opacity: 0,
-              scale: 0.8,
-              x: `${Math.random() * 200 - 100}%`,
-              y: `${Math.random() * 200 - 100}%`,
-            }}
-            animate={
-              inView
-                ? { opacity: 1, scale: 1, x: 0, y: 0 }
-                : { opacity: 0, scale: 0.8 }
-            }
-            transition={{
-              opacity: { duration: 0.5 },
-              scale: { type: "spring", stiffness: 100, damping: 2 },
-              x: { type: "spring", stiffness: 80, damping: 20 },
-              y: { type: "spring", stiffness: 80, damping: 20 },
-            }}
-            whileHover={{ scale: 1.05 }} // Slight scale increase on hover
-            whileTap={{ scale: 0.95 }} // Slight scale decrease on tap
+            whileHover={{ scale: 1.05 }} // Hover effect only
+            whileTap={{ scale: 0.95 }} // Simple tap effect
           >
             {skill}
           </motion.div>
         ))}
       </motion.div>
 
-      {/* Modal for displaying the random fact */}
       {showModal && (
         <div className="modal-overlay" onClick={closeModal}>
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
             <h2>Random Fact</h2>
-            {/* Loading Spinner */}
             {loading && <LoadingSpinner />}
             <p>{randomFact}</p>
             <button className="close-modal-btn" onClick={closeModal}>
