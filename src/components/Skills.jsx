@@ -1,20 +1,18 @@
 import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import "../styles/Skills.css";
-import LoadingSpinner from "./LoadingSpinner"; // Adjust the import path according to your project structure
 
 function Skills() {
   const [inView, setInView] = useState(false);
-  const [showModal, setShowModal] = useState(false);
-  const [randomFact, setRandomFact] = useState("");
-  const [loading, setLoading] = useState(false);
   const skillsRef = useRef(null);
 
-  // Intersection observer logic for animation
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        setInView(entry.isIntersecting);
+        if (entry.isIntersecting) {
+          setInView(true); // Set inView to true once the section is in view
+          observer.disconnect(); // Stop observing after entering the view
+        }
       },
       { threshold: 0.1 }
     );
@@ -45,71 +43,65 @@ function Skills() {
     "CI/CD",
   ];
 
-  // Function to fetch a random fact
-  const fetchRandomFact = async () => {
-    setLoading(true);
-    try {
-      const response = await fetch(
-        "https://uselessfacts.jsph.pl/random.json?language=en"
-      );
-      const data = await response.json();
-      setRandomFact(data.text);
-    } catch (error) {
-      setRandomFact("Sorry, couldn't fetch a fact right now.");
-    } finally {
-      setLoading(false);
-    }
+  // Animation variants for the skill bubbles
+  const skillVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: (i) => ({
+      opacity: 1,
+      y: 0,
+      transition: { delay: i * 0.1, duration: 0.6, ease: "easeInOut" },
+    }),
   };
-
-  const handleSkillClick = () => {
-    fetchRandomFact();
-    setShowModal(true);
-  };
-
-  const closeModal = () => setShowModal(false);
 
   return (
     <div id="skills" className="skills-section" ref={skillsRef}>
-      <motion.div
-        className="main-title-container"
-        initial={{ opacity: 0, y: 50 }}
-        animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-        transition={{ duration: 0.6 }} // Simpler easing and duration
-      >
-        <h1 className="main-title">Skills</h1>
-      </motion.div>
+      <div className="main-title-container">
+        {/* Line animation above and below the title */}
+        <motion.div
+          className="line"
+          initial={{ width: 0 }}
+          animate={inView ? { width: "100%" } : { width: 0 }}
+          transition={{ duration: 1, ease: "easeOut" }}
+        />
+        <motion.h1
+          className="main-title"
+          initial={{ opacity: 0, y: 50 }}
+          animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+          transition={{ duration: 1 }}
+        >
+          Skills
+        </motion.h1>
+        <motion.div
+          className="line"
+          initial={{ width: 0 }}
+          animate={inView ? { width: "100%" } : { width: 0 }}
+          transition={{ duration: 1, ease: "easeOut" }}
+        />
+      </div>
 
+      {/* Skills List Animation */}
       <motion.div
         className="skills-list"
-        initial={{ opacity: 0 }}
-        animate={inView ? { opacity: 1 } : { opacity: 0 }}
-        transition={{ duration: 0.6 }} // Simplified animation
+        initial="hidden"
+        animate={inView ? "visible" : "hidden"} // Trigger visibility based on inView state
+        variants={{
+          hidden: { opacity: 0 },
+          visible: { opacity: 1, transition: { staggerChildren: 0.1 } },
+        }}
       >
         {skills.map((skill, index) => (
           <motion.div
             className="skill-bubble"
             key={index}
-            onClick={handleSkillClick}
-            whileHover={{ scale: 1.05 }} // Hover effect only
-            whileTap={{ scale: 0.95 }} // Simple tap effect
+            variants={skillVariants}
+            custom={index} // Staggering effect for each skill bubble
+            whileHover={{ scale: 1.05 }} // Hover effect
+            whileTap={{ scale: 0.95 }} // Tap effect
           >
             {skill}
           </motion.div>
         ))}
       </motion.div>
-
-      {showModal && (
-        <div className="modal-overlay" onClick={closeModal}>
-          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-            <h2>Random Fact</h2>
-            {loading && <LoadingSpinner />}
-            <p>{randomFact}</p>
-            <button className="close-modal-btn" onClick={closeModal}>
-              Close
-            </button>
-          </div>
-        </div>
-      )}
     </div>
   );
 }

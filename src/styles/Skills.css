@@ -19,47 +19,36 @@
 .skills-list {
   display: grid;
   grid-template-columns: repeat(3, minmax(100px, 1fr));
-  /* 3 columns by default */
   gap: 5rem;
-  /* Decrease the gap to bring bubbles closer */
   margin: 5%;
   font-weight: bold;
-  opacity: 0;
-  /* Ensure it's hidden initially */
-
   padding: 20px;
   justify-items: center;
-  /* Center items in the grid */
+
+  /* Set this to 1 as default */
 }
 
 .skill-bubble {
   padding: 10px 25px;
-  /* Match padding from the button */
   border: 2px solid #ff496c;
-  /* Border color */
   border-radius: 6px;
-  /* Match the button border radius */
   background: transparent;
-  /* Make background transparent like the button */
   font-size: 1.2rem;
   font-weight: bold;
-  /* Font weight */
   letter-spacing: 1.5px;
   text-transform: uppercase;
   box-shadow: 0 7px 0 #d9405e, 0 5px 10px rgba(46, 46, 46, 0.374);
-  /* Shadow effect */
-  transition: all 0.3s ease;
-  /* Smooth transition */
+
   display: flex;
-  /* Flex for centering */
   justify-content: center;
-  /* Center text */
   align-items: center;
-  /* Center text */
   height: auto !important;
-  /* Fixed height for bubbles */
   width: 70%;
+
+
 }
+
+
 
 .skill-bubble:hover {
   background-color: #ff496c;
@@ -72,17 +61,44 @@
   /* Bubble moves up slightly on hover */
 }
 
-.click-indicator {
-  margin: 0px;
-  font-size: 0.9em;
-  font-style: italic;
-  /* Subtle color */
-  text-align: center;
-  /* Center the text */
-  opacity: 0.8;
-  /* Slightly faded */
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .skills-list {
+    grid-template-columns: repeat(2, 1fr);
+    /* 2 columns on mobile */
+    gap: 10px;
+    /* Decrease the gap for mobile */
+    margin: 0;
+    /* Remove margin to better fit the bubbles */
+    padding: 0;
+    /* Remove padding for mobile */
+  }
+
+  .skill-bubble {
+    font-size: 1rem;
+    /* Adjust size for mobile */
+    height: 2.5rem;
+    /* Adjust height for mobile */
+  }
 }
 
+@media (max-width: 480px) {
+  .skills-list {
+    grid-template-columns: repeat(1, 1fr);
+    /* 1 column on very small screens */
+    gap: 5px;
+    /* Decrease the gap further if necessary */
+  }
+
+  .skill-bubble {
+    height: 2rem;
+    /* Adjust height for very small screens */
+    margin: 10px;
+    /* Make the bubbles smaller for very small screens */
+    font-size: 1rem;
+    /* Adjust font size for very small screens */
+  }
+}
 
 /* Modal overlay */
 .modal-overlay {
@@ -97,7 +113,6 @@
   align-items: center;
   z-index: 1000;
 }
-
 
 /* Modal content box */
 .modal-content {
@@ -134,43 +149,4 @@
 .close-modal-btn:hover {
   background-color: #d9405e;
   /* Change this to a hover color that fits your design */
-}
-
-/* Mobile Responsiveness */
-@media (max-width: 768px) {
-  .skills-list {
-    grid-template-columns: repeat(2, 1fr);
-    /* 2 columns on mobile */
-    gap: 10px;
-    /* Decrease the gap for mobile */
-    margin: 0;
-    /* Remove margin to better fit the bubbles */
-    padding: 0;
-    /* Remove padding for mobile */
-  }
-
-  .skill-bubble {
-    font-size: 1rem;
-    /* Adjust size for mobile */
-    height: 2.5rem;
-    /* Adjust height for mobile */
-  }
-}
-
-@media (max-width: 480px) {
-  .skills-list {
-    grid-template-columns: repeat(1, 1fr);
-    /* 1 column on very small screens */
-    gap: 5px;
-    /* Decrease the gap further if necessary */
-  }
-
-  .skill-bubble {
-    height: 2rem;
-
-    margin: 10px;
-    /* Make the bubbles smaller for very small screens */
-    font-size: 1rem;
-    /* Adjust font size for very small screens */
-  }
 }
