@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
+import { FaGlobe } from "react-icons/fa";
 import "../styles/Projects.css";
 
 function ProjectOne() {
@@ -67,8 +68,20 @@ function ProjectOne() {
           className="project-link"
           target="_blank"
           rel="noopener noreferrer"
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
         >
           View Site
+          <FaGlobe
+            style={{
+              marginLeft: "8px",
+              fontSize: "1.5rem", // Adjust size as needed
+              verticalAlign: "middle",
+            }}
+          />
         </a>
       </motion.div>
 

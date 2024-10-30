@@ -8,9 +8,8 @@ import {
   faDog,
 } from "@fortawesome/free-solid-svg-icons";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
-import { FaBriefcase, FaPen } from "react-icons/fa";
-import aboutStyles from "../styles/About.module.css"; // Updated import
-import blogPostStyles from "../styles/BlogPost.module.css"; // Updated import
+import { FaBriefcase } from "react-icons/fa";
+import aboutStyles from "../styles/About.module.css";
 
 const About = () => {
   const [activeTab, setActiveTab] = useState("about");
@@ -65,13 +64,6 @@ const About = () => {
           >
             <FaBriefcase style={{ marginRight: "8px" }} />
             About
-          </li>
-          <li
-            className={activeTab === "hobbies" ? aboutStyles.active : ""}
-            onClick={() => switchTab("hobbies")}
-          >
-            <FaPen style={{ marginRight: "8px" }} />
-            Hobbies
           </li>
         </ul>
       </div>
@@ -184,68 +176,6 @@ const About = () => {
               </p>
             </motion.div>
           </>
-        )}
-
-        {activeTab === "hobbies" && (
-          <motion.div
-            className={blogPostStyles.hobbiesSection} // Updated for blogPost styles
-            variants={animationVariants}
-            initial="hidden"
-            animate={isInView ? "visible" : "hidden"}
-            transition={{ duration: 0.6 }}
-          >
-            <h3 className={blogPostStyles.sectionTitle}>Hobbies & Interests</h3>
-            <ul className={blogPostStyles.hobbiesList}>
-              <li>
-                <FontAwesomeIcon
-                  icon={faGuitar}
-                  style={{
-                    marginRight: "8px",
-                    color: "#ff496c",
-                    fontSize: "2rem",
-                    margin: "5%",
-                  }}
-                />
-                Playing guitar in a band called Disco Stranger (Oklahoma City)
-              </li>
-              <li>
-                <FontAwesomeIcon
-                  icon={faGuitar}
-                  style={{
-                    marginRight: "8px",
-                    color: "#ff496c",
-                    fontSize: "2rem",
-                    margin: "5%",
-                  }}
-                />
-                Avid skateboarder
-              </li>
-              <li>
-                <FontAwesomeIcon
-                  icon={faNetworkWired}
-                  style={{
-                    marginRight: "8px",
-                    color: "#ff496c",
-                    fontSize: "2rem",
-                    margin: "5%",
-                  }}
-                />
-                Enhancing home network and hardwiring Ethernet connections
-              </li>
-              <li>
-                <FontAwesomeIcon
-                  icon={faDog}
-                  style={{
-                    marginRight: "8px",
-                    color: "#ff496c",
-                    fontSize: "2rem",
-                    margin: "5%",
-                  }}
-                />
-                Spending time with 2 dogs, 2 cats, and my wife
-              </li>
-            </ul>
-          </motion.div>
         )}
       </div>
     </div>
