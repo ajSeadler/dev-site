@@ -1,12 +1,7 @@
-import React, { useState, useRef } from "react";
+import { useState, useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faEnvelope,
-  faGuitar,
-  faNetworkWired,
-  faDog,
-} from "@fortawesome/free-solid-svg-icons";
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { FaBriefcase } from "react-icons/fa";
 import aboutStyles from "../styles/About.module.css";
@@ -87,7 +82,7 @@ const About = () => {
                   Southern Nazarene University
                 </h4>
                 <p className={aboutStyles.degree}>
-                  Bachelor's of Science in Cybersecurity (Expected Graduation:
+                  Bachelors of Science in Cybersecurity (Expected Graduation:
                   December 2026)
                 </p>
                 <p className={aboutStyles.location}>Bethany, Oklahoma</p>

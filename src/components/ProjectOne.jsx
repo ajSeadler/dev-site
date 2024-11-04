@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { FaGlobe } from "react-icons/fa";
 import "../styles/Projects.css";
@@ -10,15 +10,20 @@ function ProjectOne() {
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        setInView(entry.isIntersecting);
+        // Trigger animation only the first time it comes into view
+        if (entry.isIntersecting && !inView) {
+          setInView(true);
+        }
       },
       { threshold: 0.1 }
     );
+
     if (projectRef.current) observer.observe(projectRef.current);
     return () => {
+      // eslint-disable-next-line react-hooks/exhaustive-deps
       if (projectRef.current) observer.unobserve(projectRef.current);
     };
-  }, []);
+  }, [inView]); // Add inView as a dependency
 
   return (
     <div className="project-one-section" ref={projectRef}>

@@ -1,4 +1,6 @@
-import React, { useEffect, useRef, useState } from "react";
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable react/no-unescaped-entities */
+import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { FaGlobe } from "react-icons/fa";
 import "../styles/Projects.css";
@@ -10,7 +12,9 @@ function ProjectTwo() {
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        setInView(entry.isIntersecting);
+        if (entry.isIntersecting && !inView) {
+          setInView(true);
+        }
       },
       { threshold: 0.1 }
     );
