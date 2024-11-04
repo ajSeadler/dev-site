@@ -1,3 +1,4 @@
+/* Main Hero Section */
 .hero-section {
   width: 100%;
   max-height: 100%;
@@ -11,25 +12,20 @@
 
 .text-container-hero {
   max-width: 75%;
-
   padding: 0 1rem;
-  /* Added padding for smaller screens */
   text-align: left;
 }
 
 .hero-section h1,
 .hero-section h3 {
   font-weight: bold !important;
-
 }
 
 .greeting {
   display: inline;
-  /* Keep it inline for the blinking effect */
   white-space: nowrap;
   font-weight: 100 !important;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;
-  /* Prevent text wrapping */
 }
 
 .greeting h2 {
@@ -38,15 +34,10 @@
 
 .blinking-cursor {
   display: inline-block;
-
   width: 10px;
-  /* Width of the blinking cursor */
   height: 1.2em;
-  /* Height of the cursor */
   background-color: #4e4e4e;
-  /* Cursor color */
   animation: blink 0.7s step-end infinite;
-  /* Blinking animation */
 }
 
 /* Blinking animation */
@@ -58,227 +49,121 @@
 
 .name {
   font-size: 4rem;
-  /* Base font size */
-  /* Lighter weight for simplicity */
-
 }
 
 .job-title {
   font-size: 2.2rem;
-  /* Base font size */
   font-weight: 300;
-  /* Light weight for a clean look */
   text-decoration: underline;
   color: #ff496c;
   transition: color 0.3s ease;
-  /* Transition effect */
 }
 
 .description {
   font-size: 1.4rem;
-  /* Base font size */
   line-height: 1.5;
   margin-top: 20px;
-
-  /* Slightly muted color for readability */
 }
 
-.resume {
-  margin-top: 5%;
+.button-group {
+  display: flex;
+  gap: 10px;
+  margin-top: 1%;
+  text-align: center;
+  flex-wrap: wrap;
+  justify-content: start;
 }
 
-.resume-button {
+/* Specific button adjustments */
+.resume-button,
+.github-button,
+.linkedin-button {
   color: #ff496c;
   text-decoration: none;
-  padding: 10px 20px;
-  border: 2px solid #ff496c;
-  font-size: 1.2rem;
+  padding: 8px;
+  font-size: 1rem;
   font-weight: bold;
-  letter-spacing: 1.5px;
+  letter-spacing: 1px;
   text-transform: uppercase;
   background: transparent;
   border-radius: 6px;
-
-  box-shadow: 0 5px 0 #d9405e, 0 5px 10px rgba(0, 0, 0, 0.3);
-  /* 3D-like shadow effect */
+  border: 2px solid #ff496c;
+  box-shadow: 0 3px 0 #d9405e, 0 3px 5px rgba(0, 0, 0, 0.3);
   cursor: pointer;
+  width: 100%;
+  max-width: 150px;
+  /* Ensures buttons fit within container on mobile */
 }
 
-.resume-button:hover {
+.resume-button:hover,
+.github-button:hover,
+.linkedin-button:hover {
   background-color: #ff496c;
   color: white;
   box-shadow: 0 3px 0 #d9405e, 0 3px 5px rgba(0, 0, 0, 0.3);
-  /* Slightly reduced shadow on hover */
   transform: translateY(2px);
-  /* Button moves down slightly to enhance the 3D effect */
 }
 
-.resume-button:active {
-  box-shadow: 0 2px 0 #d9405e, 0 2px 5px rgba(0, 0, 0, 0.2);
-  /* Reduced shadow when clicked */
-  transform: translateY(4px);
-  /* Button appears pressed down */
-}
-
-
-.image-container {
-  width: 75%;
-  /* Set the container's width */
-  height: 75%;
-  /* Ensure the height matches the width to make it a square */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0 auto;
-  /* Centers the image container horizontally */
-  border-radius: 100px;
-  /* Full circle for the container */
-  overflow: hidden;
-  border: 2px solid #fff;
-}
-
-.profile-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: right bottom;
-  /* Move the image up and to the left */
-}
-
-
-
-
-
-.glow {
-  position: absolute;
-  /* Position glow behind the image */
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: -1 !important;
-  height: 100%;
-  border-radius: 50%;
-  /* Match the image's border radius */
-  background-color: #8FBB99;
-  /* Sleek color for glow */
-  filter: blur(15px);
-  /* Add blur for glowing effect */
-  z-index: 0;
-  /* Set behind the image */
-  animation: pulse 5s infinite;
-  /* Optional: add a pulsing effect */
-}
-
-/* Optional pulsing effect */
-@keyframes pulse {
-  0% {
-    transform: scale(1);
+@media (max-width: 768px) {
+  .button-group {
+    gap: 5px;
+    justify-content: center;
+    margin-top: 5%;
+    /* Smaller gap on mobile */
   }
 
-  50% {
-    transform: scale(1.05);
-  }
+  .resume-button,
+  .github-button,
+  .linkedin-button {
+    padding: 5px;
 
-  100% {
-    transform: scale(1);
+    font-size: 0.9rem;
+    width: 100%;
+    /* Further limits button width for smaller screens */
   }
 }
 
-.scroll-indicator {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: absolute;
-  /* Position it at the bottom center */
-  bottom: 20%;
-  /* Distance from the bottom */
-  left: 50%;
-  transform: translateX(-50%);
-  color: white;
-  /* Change text color as needed */
-  opacity: 0.8;
-  /* Slight transparency */
-}
+@media (max-width: 480px) {
 
-.scroll-arrow {
-  animation: bounce 1s infinite;
-  /* Bouncing effect */
-  margin-bottom: 5px;
-  /* Space between arrow and text */
-}
-
-/* Bouncing animation */
-@keyframes bounce {
-
-  0%,
-  20%,
-  50%,
-  80%,
-  100% {
-    transform: translateY(0);
-  }
-
-  40% {
-    transform: translateY(-10px);
-  }
-
-  60% {
-    transform: translateY(-5px);
+  .resume-button,
+  .github-button,
+  .linkedin-button {
+    padding: 4px;
+    font-size: 0.8rem;
+    width: 100%;
   }
 }
-
-.scroll-text {
-  font-size: 1rem;
-  /* Adjust size as needed */
-  text-align: center;
-}
-
 
 
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
 
-  .scroll-indicator {
-    display: none;
-  }
-
   .hero-section {
     grid-template-columns: 1fr;
-    /* Single column layout for mobile */
     padding: 0rem 2rem 2rem;
-    /* Reduced padding for smaller screens */
     height: auto;
-    /* Allow height to be dynamic */
     text-align: center;
-    /* Center text */
-
   }
 
   .text-container-hero {
     max-width: 100%;
-    /* Allow more space on mobile */
     padding: 0 1rem;
-    /* Added padding */
   }
 
   .greeting {
     font-size: 1.8rem;
-    /* Smaller font size */
   }
 
   .name {
     font-size: 2.5rem;
-    /* Smaller font size */
   }
 
   .job-title {
     font-size: 1.6rem;
-    /* Smaller font size */
   }
 
   .description {
     font-size: 1rem;
-    /* Smaller font size */
   }
 
   .image-container {
@@ -287,29 +172,24 @@
 }
 
 @media (max-width: 480px) {
-
   .hero-section {
     height: 100vh;
   }
 
   .greeting {
     font-size: 1.5rem;
-    /* Smaller font size for very small screens */
   }
 
   .name {
     font-size: 2rem;
-    /* Smaller font size */
   }
 
   .job-title {
     font-size: 1.4rem;
-    /* Smaller font size */
   }
 
   .description {
     font-size: 1.1rem;
-    /* Smaller font size */
   }
 
   .image-container {
@@ -324,8 +204,4 @@
   .resume {
     margin-top: 10%;
   }
-
-
-
-
 }

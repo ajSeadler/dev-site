@@ -6,7 +6,7 @@
 }
 
 :root {
-  --background-gradient: linear-gradient(120deg, #ddd, #bbe6eb);
+  --background-gradient: linear-gradient(120deg, #ffe5b4, #ffcccb);
   /* Light mode gradient background */
   --text-color: #000000;
   --secondary-color: #2ecc71;
@@ -79,6 +79,9 @@ a:hover {
 h1,
 h2,
 h3,
+h4,
+h5,
+h6,
 p,
 a {
   color: var(--text-color);
