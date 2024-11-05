@@ -101,6 +101,15 @@
   padding: 10%;
 }
 
+.other-widget {
+  background-color: #319261;
+}
+
+.svg-white {
+  filter: invert(100%);
+}
+
+
 .daily-dev {
   display: flex;
   width: 100%;

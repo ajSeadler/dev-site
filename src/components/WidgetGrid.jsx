@@ -106,7 +106,11 @@ const WidgetGrid = () => {
             animate="visible"
             whileHover="hover"
           >
-            <a href="https://linkedin.com/in/anthony-seadler" target="_blank">
+            <a
+              href="https://linkedin.com/in/anthony-seadler"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <LinkedInIcon style={{ fontSize: 40 }} />
               <p className="small-text" style={{ fontSize: ".7rem" }}>
                 A glimpse into my professional journey.
@@ -159,25 +163,34 @@ const WidgetGrid = () => {
               <Clock value={currentTime} size={60} renderNumbers={false} />
             </motion.div>
 
+            {/* Discogs Widget Card */}
             <motion.div
-              className="daily-dev"
+              className="other-widget"
               variants={fadeInUp}
               initial="hidden"
               animate="visible"
               whileHover="hover"
             >
               <a
-                href="https://app.daily.dev/ajseadler"
+                href="https://www.discogs.com/user/Masterofdoom"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="daily-dev-link"
+                className="discogs-link"
               >
                 <img
-                  src="https://api.daily.dev/devcards/v2/1XOC8szlXqhgjoCq7kMgi.png?r=jbe&type=wide"
-                  style={{ width: "100%", height: "100%", cursor: "pointer" }}
-                  alt="Aj Seadler's Dev Card"
-                  loading="lazy"
+                  src="/discogs.svg" // Update the path to your discogs.svg
+                  alt="Discogs Logo"
+                  className="svg-white"
+                  style={{
+                    width: 30,
+                    height: 30,
+                    marginRight: 8,
+                    color: "#fff",
+                  }} // Style as needed
                 />
+                <div className="discogs-widget-text">
+                  <p>Discogs</p>
+                </div>
               </a>
             </motion.div>
           </div>
