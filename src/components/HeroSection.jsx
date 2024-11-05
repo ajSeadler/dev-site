@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+
 import "../styles/HeroSection.css";
 
 function HeroSection() {
@@ -14,14 +15,14 @@ function HeroSection() {
   };
 
   // Terminal-like typing effect for greeting only
-  const terminalText = "Hii! My name is:";
+  const terminalText = "Hi! My name is:";
   const [displayedText, setDisplayedText] = React.useState(""); // Initialize state
 
   React.useEffect(() => {
     let index = 0;
     const interval = setInterval(() => {
       if (index < terminalText.length) {
-        setDisplayedText((prev) => prev + terminalText.charAt(index)); // Use charAt to get the specific character
+        setDisplayedText(terminalText.slice(0, index + 1)); // Update with slice instead of charAt
         index++;
       } else {
         clearInterval(interval);
@@ -75,39 +76,6 @@ function HeroSection() {
           and Express.js to create reliable backends, while also focusing on
           building clean and intuitive front-end experiences.
         </motion.p>
-
-        {/* Fancy Resume Button */}
-        <div className="button-group">
-          <motion.a
-            href="/resume.pdf"
-            className="resume-button"
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 1, duration: 1 }}
-          >
-            Resume
-          </motion.a>
-          <motion.a
-            href="https://github.com/ajSeadler" // Replace with your GitHub link
-            className="resume-button"
-            target="_blank"
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 1.2, duration: 1 }}
-          >
-            GitHub
-          </motion.a>
-          <motion.a
-            href="https://linkedin.com/in/anthony-seadler" // Replace with your LinkedIn link
-            className="resume-button"
-            target="_blank"
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 1.4, duration: 1 }}
-          >
-            LinkedIn
-          </motion.a>
-        </div>
       </div>
     </div>
   );
