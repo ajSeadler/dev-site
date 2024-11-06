@@ -12,7 +12,7 @@
   background-color: #171515;
   border: 2px solid #fff;
   border-radius: 20px;
-  padding: 15px;
+  padding: 1.5rem;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
@@ -44,13 +44,13 @@
 }
 
 .vertical-widget,
-.reddit-widget,
+.spotify-widget,
 .medium-widget,
 .instagram-widget,
 .other-widget {
   border-radius: 20px;
   width: 100%;
-  padding: 20px;
+  padding: 1.5rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   display: flex;
   justify-content: center;
@@ -63,7 +63,7 @@
 
 .github-commits:hover,
 .vertical-widget:hover,
-.reddit-widget:hover,
+.spotify-widget:hover,
 .medium-widget:hover,
 .instagram-widget:hover,
 .other-widget:hover,
@@ -72,7 +72,9 @@
   /* Slightly enlarges the widget by 5% */
 }
 
-.reddit-widget,
+
+
+.spotify-widget,
 .medium-widget,
 .instagram-widget,
 .other-widget,
@@ -86,12 +88,14 @@
   text-align: left;
 }
 
-.reddit-widget {
-  background-color: #FF5700;
+.spotify-widget {
+  background-color: #333;
+  margin-top: 2%;
 }
 
 .medium-widget {
-  background-color: #333;
+
+  background-color: #1DB954;
 }
 
 .instagram-widget {
@@ -102,10 +106,15 @@
 }
 
 .other-widget {
-  background-color: #319261;
+  background-color: #FF5700;
 }
 
-
+.spotify-logo {
+  width: 30px;
+  /* Adjust size as needed */
+  height: 30px;
+  margin-right: 0.5rem;
+}
 
 
 .daily-dev {

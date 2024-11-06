@@ -120,13 +120,27 @@ const WidgetGrid = () => {
 
           <div className="widget-group">
             <motion.div
-              className="reddit-widget"
+              className="spotify-widget"
               variants={fadeInUp}
               initial="hidden"
               animate="visible"
               whileHover="hover"
             >
-              Reddit
+              <a
+                href="https://open.spotify.com/user/1296837920?si=e9628d1eaa4d484e" // Replace with your Spotify profile URL
+                target="_blank"
+                rel="noopener noreferrer"
+                className="spotify-link"
+              >
+                <img
+                  src="/spotify-icon.svg" // Update with the correct path to spotify.png
+                  alt="Spotify Logo"
+                  className="spotify-logo"
+                />
+                <div className="spotify-widget-text">
+                  <p>Spotify</p>
+                </div>
+              </a>
             </motion.div>
 
             <motion.div
