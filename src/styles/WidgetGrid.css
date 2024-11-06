@@ -11,6 +11,7 @@
   position: relative;
   background-color: #171515;
   border: 2px solid #fff;
+  color: #fff !important;
   border-radius: 20px;
   padding: 1.5rem;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -18,6 +19,10 @@
   flex-direction: column;
   /* justify-content: end; - whenever you igure out what to put in the github card other than name */
   text-align: left;
+}
+
+.github-text p {
+  color: #fff !important;
 }
 
 
@@ -41,6 +46,10 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   gap: 10px;
+}
+
+.vertical-widget p {
+  color: #fff !important;
 }
 
 .vertical-widget,

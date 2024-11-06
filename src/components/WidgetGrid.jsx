@@ -119,7 +119,7 @@ const WidgetGrid = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <LinkedInIcon style={{ fontSize: 40 }} />
+              <LinkedInIcon style={{ fontSize: 40, color: "#fff" }} />
               <p className="small-text" style={{ fontSize: ".7rem" }}>
                 (A glimpse into my professional history)
               </p>

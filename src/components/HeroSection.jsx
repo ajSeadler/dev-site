@@ -1,82 +1,60 @@
-import React from "react";
-import { motion } from "framer-motion";
-
+import { useState, useEffect, useMemo } from "react";
 import "../styles/HeroSection.css";
 
 function HeroSection() {
-  // Animation Variants for the greeting
-  const textVariant = {
-    hidden: { opacity: 0, y: 20 },
-    visible: (i) => ({
-      opacity: 1,
-      y: 0,
-      transition: { delay: i * 0.2, duration: 0.6, ease: "easeInOut" },
-    }),
-  };
+  const [displayedTitle, setDisplayedTitle] = useState("");
+  const [titleIndex, setTitleIndex] = useState(0);
+  const [charIndex, setCharIndex] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
 
-  // Terminal-like typing effect for greeting only
-  const terminalText = "Hi! My name is:";
-  const [displayedText, setDisplayedText] = React.useState(""); // Initialize state
+  // Stable array of job titles using useMemo
+  const jobTitles = useMemo(
+    () => [
+      "Full Stack Developer",
+      "Network Enthusiast",
+      "Musician",
+      "All things tech",
+    ],
+    []
+  );
 
-  React.useEffect(() => {
-    let index = 0;
-    const interval = setInterval(() => {
-      if (index < terminalText.length) {
-        setDisplayedText(terminalText.slice(0, index + 1)); // Update with slice instead of charAt
-        index++;
-      } else {
-        clearInterval(interval);
+  useEffect(() => {
+    const typingSpeed = isDeleting ? 50 : 100;
+    const pauseTime = 1000; // Pause after typing out a full title
+
+    const handleTyping = () => {
+      const currentTitle = jobTitles[titleIndex];
+
+      if (!isDeleting && charIndex < currentTitle.length) {
+        // Typing out the title
+        setDisplayedTitle(currentTitle.slice(0, charIndex + 1));
+        setCharIndex((prev) => prev + 1);
+      } else if (isDeleting && charIndex > 0) {
+        // Backspacing the title
+        setDisplayedTitle(currentTitle.slice(0, charIndex - 1));
+        setCharIndex((prev) => prev - 1);
+      } else if (!isDeleting && charIndex === currentTitle.length) {
+        // Pause before starting to delete
+        setTimeout(() => setIsDeleting(true), pauseTime);
+      } else if (isDeleting && charIndex === 0) {
+        // Move to the next title after deleting
+        setIsDeleting(false);
+        setTitleIndex((prev) => (prev + 1) % jobTitles.length);
       }
-    }, 100); // Adjust typing speed (in ms)
+    };
 
-    return () => clearInterval(interval); // Clean up on unmount
-  }, []); // Dependency array ensures effect runs only once
+    const typingInterval = setInterval(handleTyping, typingSpeed);
+
+    return () => clearInterval(typingInterval);
+  }, [charIndex, isDeleting, jobTitles, titleIndex]);
 
   return (
     <div className="hero-section" id="about">
-      <div className="text-container-hero">
-        <motion.h2
-          className="greeting"
-          initial="hidden"
-          animate="visible"
-          variants={textVariant}
-          custom={1} // Custom prop for staggered animation
-        >
-          {displayedText} {/* Display animated text */}
-          <span className="blinking-cursor"></span> {/* Blinking cursor */}
-        </motion.h2>
-        <motion.h1
-          className="name"
-          initial="hidden"
-          animate="visible"
-          variants={textVariant}
-          custom={2} // Custom prop for staggered animation
-        >
-          Anthony Seadler
-        </motion.h1>
-        <motion.h3
-          className="job-title"
-          initial="hidden"
-          animate="visible"
-          variants={textVariant}
-          custom={3} // Custom prop for staggered animation
-        >
-          Full Stack Developer <br /> Oklahoma City, OK
-        </motion.h3>
-        <motion.p
-          className="description"
-          initial="hidden"
-          animate="visible"
-          variants={textVariant}
-          custom={4}
-        >
-          Passionate developer specializing in modern web
-          technologies/practices. Here you will find a bit more information
-          about me and the skills I possess. I work with tools like PostgreSQL
-          and Express.js to create reliable backends, while also focusing on
-          building clean and intuitive front-end experiences.
-        </motion.p>
-      </div>
+      <h1 className="name">Anthony Seadler</h1>
+      <h2 className="job-title">
+        {displayedTitle}
+        <span className="blinking-cursor"></span>
+      </h2>
     </div>
   );
 }
