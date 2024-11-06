@@ -34,11 +34,12 @@
 
 .skill-widget-bottom {
   position: relative;
-  border: 2px solid #fff;
+  border-top: 2px solid #fff;
+  border-bottom: 2px solid #fff;
   background-color: #F4442E;
-  border-radius: 15px;
-  width: 50%;
-  margin-top: 1% !important;
+  border-radius: 0px;
+  width: 100%;
+  margin-top: 2% !important;
   margin: auto;
   padding: 1rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -65,7 +66,8 @@
 
 @media (max-width: 768px) {
   .skill-widget-bottom {
-    width: 75%;
+    margin-top: 7% !important;
+    width: 100%;
     /* Adjust to 80% on smaller screens */
   }
 }
