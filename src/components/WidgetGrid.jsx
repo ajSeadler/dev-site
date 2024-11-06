@@ -71,34 +71,42 @@ const WidgetGrid = () => {
     <div className="widget-section">
       <div className="widget-grid">
         <motion.div
-          className="github-commits"
-          variants={fadeInUp}
-          initial="hidden"
-          animate="visible"
-          whileHover="hover"
-        >
-          <div className="icon-container">
-            <GitHubIcon style={{ fontSize: 40 }} />
-          </div>
-          {loading || userInfo.followers === 0 ? (
-            <div className="overlay">
-              <p>No data found at the moment</p>
-            </div>
-          ) : (
-            <div className="github-text">
-              <p>Followers: {userInfo.followers}</p>
-              <p>Repositories: {userInfo.public_repos}</p>
-            </div>
-          )}
-        </motion.div>
-
-        <motion.div
           className="widget-container"
           variants={fadeInUp}
           initial="hidden"
           animate="visible"
           whileHover="hover"
         >
+          <motion.div
+            className="github-commits"
+            variants={fadeInUp}
+            initial="hidden"
+            animate="visible"
+            whileHover="hover"
+          >
+            <div className="icon-container">
+              <GitHubIcon style={{ fontSize: 40 }} />
+            </div>
+            {loading || userInfo.followers === 0 ? (
+              <div className="overlay">
+                <p>No data found at the moment</p>
+              </div>
+            ) : (
+              <a
+                href="https://github.com/ajSeadler"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <div className="github-text">
+                  <p>Followers: {userInfo.followers}</p>
+                  <p>Repositories: {userInfo.public_repos}</p>
+                  <p style={{ fontSize: ".7rem" }}>
+                    (Click here to view the source code for all my repositories)
+                  </p>
+                </div>
+              </a>
+            )}
+          </motion.div>
           <motion.div
             className="vertical-widget"
             variants={rotateIn}
@@ -113,12 +121,25 @@ const WidgetGrid = () => {
             >
               <LinkedInIcon style={{ fontSize: 40 }} />
               <p className="small-text" style={{ fontSize: ".7rem" }}>
-                A glimpse into my professional journey.
+                (A glimpse into my professional history)
               </p>
             </a>
           </motion.div>
 
           <div className="widget-group">
+            <motion.div
+              className="instagram-widget"
+              variants={rotateIn}
+              initial="hidden"
+              animate="visible"
+              whileHover="hover"
+            >
+              <h4 style={{ color: "#333" }}>
+                Located in
+                <br /> CST Time Zone
+              </h4>
+              <Clock value={currentTime} size={60} renderNumbers={false} />
+            </motion.div>
             <motion.div
               className="spotify-widget"
               variants={fadeInUp}
@@ -138,7 +159,8 @@ const WidgetGrid = () => {
                   className="spotify-logo"
                 />
                 <div className="spotify-widget-text">
-                  <p>Spotify</p>
+                  <h4>Spotify</h4>
+                  <p>(to check out my playlists)</p>
                 </div>
               </a>
             </motion.div>
@@ -158,23 +180,10 @@ const WidgetGrid = () => {
               >
                 <LeetCodeIcon style={{ fontSize: 30, color: "orange" }} />
                 <div className="medium-widget-text">
-                  <p>LeetCode</p>
+                  <h4>LeetCode</h4>
+                  <p>(for when I want to practice)</p>
                 </div>
               </a>
-            </motion.div>
-
-            <motion.div
-              className="instagram-widget"
-              variants={rotateIn}
-              initial="hidden"
-              animate="visible"
-              whileHover="hover"
-            >
-              <h4 style={{ color: "#333" }}>
-                Located in
-                <br /> CST Time Zone
-              </h4>
-              <Clock value={currentTime} size={60} renderNumbers={false} />
             </motion.div>
 
             {/* Discogs Widget Card */}
@@ -203,7 +212,8 @@ const WidgetGrid = () => {
                   }} // Style as needed
                 />
                 <div className="discogs-widget-text">
-                  <p>Discogs</p>
+                  <h4>Discogs</h4>
+                  <p>(catalog of my vinyl collection)</p>
                 </div>
               </a>
             </motion.div>

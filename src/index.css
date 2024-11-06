@@ -5,6 +5,10 @@
   box-sizing: border-box;
 }
 
+a {
+  text-decoration: none;
+}
+
 :root {
   --background-gradient: linear-gradient(120deg, #ffe5b4, #ffcccb);
   /* Light mode gradient background */

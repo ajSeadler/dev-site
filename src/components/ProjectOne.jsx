@@ -27,7 +27,7 @@ function ProjectOne() {
 
   return (
     <div className="project-one-section" ref={projectRef}>
-      <div className="main-title-container">
+      {/* <div className="main-title-container">
         <motion.div
           className="line"
           initial={{ width: 0 }}
@@ -48,7 +48,7 @@ function ProjectOne() {
           animate={inView ? { width: "100%" } : { width: 0 }}
           transition={{ duration: 1, ease: "easeOut" }}
         />
-      </div>
+      </div> */}
       <motion.div
         className="project-info-card"
         initial={{ opacity: 0, y: 50 }}

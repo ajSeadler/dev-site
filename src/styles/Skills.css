@@ -1,181 +1,86 @@
-.skills-section {
-  padding: 15% 5%;
-  overflow: hidden;
-  min-height: 100vh;
-}
-
-.main-title-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 10px;
-}
-
-.main-title {
-  font-size: 3rem;
-  text-align: center;
-}
-
-.skills-list {
+.widget-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(100px, 1fr));
-  gap: 5rem;
-  margin: 5%;
-  font-weight: bold;
-  padding: 20px;
-  justify-items: center;
-
-  /* Set this to 1 as default */
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 15px;
+  padding-top: 5%;
+  width: 80%;
+  margin: auto;
 }
 
-.skill-bubble {
-  padding: 10px 25px;
-  border: 2px solid #ff496c;
-  border-radius: 6px;
-  background: transparent;
-  font-size: 1.2rem;
-  font-weight: bold;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  box-shadow: 0 7px 0 #d9405e, 0 5px 10px rgba(46, 46, 46, 0.374);
-
+.skill-widget {
+  position: relative;
+  border: 2px solid #fff;
+  border-radius: 15px;
+  padding: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: auto !important;
-  width: 70%;
-
-
-}
-
-
-
-.skill-bubble:hover {
-  background-color: #ff496c;
-  /* Change background color on hover */
-  color: white;
-  /* Ensure text remains visible */
-  box-shadow: 0 3px 0 #d9405e, 0 3px 5px rgba(0, 0, 0, 0.3);
-  /* Adjust shadow on hover */
-  transform: translateY(-2px);
-  /* Bubble moves up slightly on hover */
-}
-
-/* Mobile Responsiveness */
-@media (max-width: 768px) {
-  .skills-list {
-    grid-template-columns: repeat(2, 1fr);
-    /* 2 columns on mobile */
-    gap: 10px;
-    /* Decrease the gap for mobile */
-    margin: 0;
-    /* Remove margin to better fit the bubbles */
-    padding: 0;
-    /* Remove padding for mobile */
-  }
-
-  .skill-bubble {
-    font-size: 1rem;
-    /* Adjust size for mobile */
-    height: 2.5rem;
-    /* Adjust height for mobile */
-  }
-}
-
-@media (max-width: 480px) {
-  .skills-list {
-    grid-template-columns: repeat(1, 1fr);
-    /* 1 column on very small screens */
-    gap: 5px;
-    /* Decrease the gap further if necessary */
-  }
-
-  .skill-bubble {
-    height: 2rem;
-    /* Adjust height for very small screens */
-    margin: 10px;
-    /* Make the bubbles smaller for very small screens */
-    font-size: 1rem;
-    /* Adjust font size for very small screens */
-  }
-}
-
-/* Modal overlay */
-.modal-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.7);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
-}
-
-/* spinner */
-.spinner {
-  border: 8px solid rgba(255, 255, 255, 0.3);
-  /* Light border */
-  border-top: 8px solid #ff496c;
-  /* Top border color */
-  border-radius: 50%;
-  width: 40px;
-  /* Spinner size */
-  height: 40px;
-  /* Spinner size */
-  animation: spin 1s linear infinite;
-  /* Spinning animation */
-  margin: 20px auto;
-  /* Center the spinner */
-}
-
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-
-
-/* Modal content box */
-.modal-content {
-  background-color: transparent;
-  padding: 20px;
-  border-radius: 10px;
-  max-width: 500px;
-  width: 90%;
   text-align: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.modal-content h2 {
   color: #fff;
-  font-size: 1.5rem;
-  margin-bottom: 15px;
+  font-weight: 500;
+  transition: transform 0.3s;
 }
 
-.modal-content p {
-  font-size: 1rem;
-  margin-bottom: 20px;
-  color: #ddd;
+.skill-widget:hover {
+  transform: scale(1.05);
 }
 
-.close-modal-btn {
-  background-color: #ff496c;
+.icon-container {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.skill-widget-bottom {
+  position: relative;
+  border: 2px solid #fff;
+  background-color: #F4442E;
+  border-radius: 15px;
+  width: 50%;
+  margin-top: 1% !important;
+  margin: auto;
+  padding: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.skill-widget-bottom p {
   color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+  font-size: 16px;
+  font-weight: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.close-modal-btn:hover {
-  background-color: #d9405e;
-  /* Change this to a hover color that fits your design */
+.skill-widget-bottom p .icon-container {
+  margin-right: 8px;
+  margin-left: 8px;
+}
+
+@media (max-width: 768px) {
+  .skill-widget-bottom {
+    width: 75%;
+    /* Adjust to 80% on smaller screens */
+  }
+}
+
+
+/* Ensures responsive grid structure on smaller screens */
+@media (max-width: 800px) {
+  .widget-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .widget-grid {
+    grid-template-columns: 1fr;
+    width: 90%;
+  }
 }

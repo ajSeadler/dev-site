@@ -57,7 +57,7 @@
   align-items: center;
   color: #fff !important;
   text-align: center;
-  font-weight: bold;
+  font-weight: 200;
   border: 2px solid #fff;
 }
 
@@ -89,8 +89,16 @@
 }
 
 .spotify-widget {
-  background-color: #333;
+  background-color: #a653ff;
   margin-top: 2%;
+}
+
+.spotify-widget-text p,
+.medium-widget-text p,
+.instagram-widget-text p,
+.discogs-widget-text p {
+  font-size: .7rem;
+  color: #333 !important;
 }
 
 .medium-widget {
