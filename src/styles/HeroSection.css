@@ -3,11 +3,11 @@
   width: 100%;
   max-height: 100%;
   height: auto;
-  padding: 0rem 5rem 5rem;
+  padding: 0%;
   display: flex;
   flex-direction: column;
   /* Stack items vertically */
-  margin-top: 5%;
+  margin-top: 3%;
   justify-content: left;
   text-align: left !important;
   align-items: center;
@@ -31,8 +31,7 @@
 .job-title {
   font-size: 2.2rem;
   font-weight: bold;
-  text-decoration: underline;
-  color: #adadad;
+  text-decoration: none;
   transition: color 0.3s ease;
   margin-bottom: 2rem;
   /* Spacing before any other content below */
@@ -53,8 +52,8 @@
 .blinking-cursor {
   display: inline-block;
   width: 10px;
-  height: 1.2em;
-  background-color: #4e4e4e;
+  height: 2rem;
+  background-color: #ccc;
   animation: blink 0.7s step-end infinite !important;
 }
 

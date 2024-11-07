@@ -14,7 +14,6 @@
   font-size: 2.5rem;
   margin-bottom: 10px;
   text-transform: uppercase;
-  color: #ff496c;
 }
 
 .contact-header p {
@@ -98,7 +97,7 @@
 .info-item .icon {
   margin-right: 10px;
   font-size: 1.5rem;
-  color: #ff496c;
+
 }
 
 .social-icons {
@@ -109,7 +108,7 @@
 .social-icons a {
   margin: 0 10px;
   font-size: 1.8rem;
-  color: #ff496c;
+
   transition: all 0.3s ease;
 }
 
