@@ -1,4 +1,4 @@
-import HeroSection from "./HeroSection";
+// import HeroSection from "./HeroSection";
 import Projects from "./Projects";
 import Skills from "./Skills";
 import Contact from "./Contact";
@@ -9,7 +9,7 @@ import "../styles/Home.css";
 function Home() {
   return (
     <div className="home">
-      <HeroSection />
+      {/* <HeroSection /> */}
       <WidgetGrid />
 
       <Skills />
