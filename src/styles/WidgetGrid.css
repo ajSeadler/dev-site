@@ -3,8 +3,98 @@
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   padding-top: 5%;
   gap: 10px;
-  width: 50%;
+  width: 75%;
   margin: auto;
+}
+
+.profile-card {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 1rem;
+  position: relative;
+  background-color: #fff;
+  border-radius: 20px;
+  border: 2px solid #fff;
+  flex-direction: column;
+  width: 100%;
+}
+
+.profile-content {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  padding: 10px;
+  max-width: 70%;
+}
+
+.profile-info {
+  margin-bottom: 1rem;
+  padding-top: 10px;
+}
+
+.profile-card h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #333 !important;
+}
+
+.email {
+  color: rgb(61, 109, 243) !important;
+}
+
+.profile-card p {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 8px;
+}
+
+.bio {
+  color: #333 !important;
+}
+
+.profile-card .profile-info p {
+  font-weight: 500;
+}
+
+.profile-card .profile-info .email {
+  text-decoration: underline;
+}
+
+.profile-card .bio {
+  color: #fff;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-top: 12px;
+}
+
+.profile-pic {
+  width: 50%;
+  height: 50%;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  object-fit: cover;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 800px) {
+  .profile-card {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .profile-content {
+    max-width: 100%;
+  }
+
+  .profile-pic {
+    width: 80px;
+    height: 80px;
+    top: 10px;
+    right: 10px;
+  }
 }
 
 .github-commits {
