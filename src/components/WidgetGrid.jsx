@@ -211,7 +211,7 @@ const WidgetGrid = () => {
                   style={{
                     width: 30,
                     height: 30,
-                    marginRight: 8,
+                    marginRight: 0,
                     color: "#fff",
                   }} // Style as needed
                 />
