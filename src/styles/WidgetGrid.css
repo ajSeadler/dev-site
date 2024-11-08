@@ -240,6 +240,7 @@
 @media (max-width: 1200px) {
   .widget-grid {
     grid-template-columns: repeat(1, 1fr);
+    width: 95%;
   }
 
   .widget-container {
@@ -261,6 +262,7 @@
 @media (max-width: 500px) {
   .widget-grid {
     grid-template-columns: 1fr;
+
 
   }
 
