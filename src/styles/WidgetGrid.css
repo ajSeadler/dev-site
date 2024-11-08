@@ -7,7 +7,12 @@
   margin: auto;
 }
 
-.profile-card {
+.widget-section {
+  width: 100vw !important;
+  margin: auto !important;
+}
+
+.profile-card-widget {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
@@ -79,7 +84,7 @@
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
-@media (max-width: 800px) {
+@media (max-width: 1200px) {
   .profile-card {
     flex-direction: column;
     padding: 1rem;
@@ -232,13 +237,13 @@
   height: auto;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 1200px) {
   .widget-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(1, 1fr);
   }
 
   .widget-container {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(1, 1fr);
     gap: 5px;
   }
 
@@ -256,7 +261,7 @@
 @media (max-width: 500px) {
   .widget-grid {
     grid-template-columns: 1fr;
-    width: 75%;
+
   }
 
   .widget-container {

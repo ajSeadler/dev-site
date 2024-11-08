@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import LeetCodeIcon from "@mui/icons-material/Code";
+import ProfileWidget from "./ProfileWidget";
 import Clock from "react-clock";
 import "react-clock/dist/Clock.css";
 import "../styles/WidgetGrid.css";
@@ -71,26 +72,8 @@ const WidgetGrid = () => {
     <div className="widget-section">
       <div className="widget-grid">
         {/* Profile Card Widget */}
-        <motion.div
-          className="widget-container profile-card"
-          variants={fadeInUp}
-          initial="hidden"
-          animate="visible"
-          whileHover="hover"
-        >
-          <div className="profile-content">
-            <img src="/portrait.jpg" alt="Profile" className="profile-pic" />
-            <div className="profile-info">
-              <h3>Anthony Seadler</h3>
-              <p className="email">anthonyseadler@gmail.com</p>
-              <p className="bio">
-                Passionate developer with experience in full-stack web
-                development. Always learning and improving. Feel free to explore
-                my repositories and connect with me.
-              </p>
-            </div>
-          </div>
-        </motion.div>
+        <ProfileWidget />
+
         <motion.div
           className="widget-container"
           variants={fadeInUp}
