@@ -32,8 +32,7 @@ body.dark-mode {
 
 /* Gradient background for dark mode */
 body.dark-mode {
-  background: linear-gradient(135deg, #2c7edc, #003E73);
-
+  background: linear-gradient(155deg, #0f2027, #203a43, #2c5364, #5cc1ff);
   background-size: cover;
   background-position: center;
   --card-border-color: #fff;
@@ -49,7 +48,7 @@ body {
   background: var(--background-gradient);
   /* Dynamic background color */
   color: var(--text-color);
-  --card-border-color: #000;
+  --card-border-color: #333;
   /* Dark mode border color */
   background-size: cover;
   background-position: center;

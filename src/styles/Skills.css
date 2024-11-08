@@ -9,7 +9,7 @@
 
 .skill-widget {
   position: relative;
-  border: 2px solid #fff;
+  border: 2px solid var(--card-border-color);
   border-radius: 15px;
   padding: 1rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);

@@ -129,9 +129,7 @@
   /* Rounded corners */
 }
 
-.project-subtitle {
-  text-decoration: underline 3px #ff496c;
-}
+
 
 .second-text-container-projects {
   width: 100%;
@@ -163,7 +161,7 @@
   font-size: 2rem;
   margin-bottom: 15px;
 
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 .project-description {
@@ -175,7 +173,7 @@
 .highlight {
   font-weight: bold;
   color: #ff496c;
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 /* Link styling */

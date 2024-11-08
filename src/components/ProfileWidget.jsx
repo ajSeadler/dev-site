@@ -36,13 +36,12 @@ function ProfileWidget({
       </div>
       <div className="bio">
         <p>
-          <strong style={{ textDecoration: "underline" }}>Bio:</strong> Hi
-          there! I'm Anthony Seadler, though most people call me AJ. I'm a
-          full-stack developer with a Web Development certification from the
-          University of Oklahoma and Fullstack Academy. Currently, I’m pursuing
-          a Bachelor of Science in Cybersecurity at Southern Nazarene
-          University, combining my passion for development with a strong focus
-          on security.
+          <strong style={{ color: "#ccc" }}>Bio:</strong> Hi there! I'm Anthony
+          Seadler, though most people call me AJ. I'm a full-stack developer
+          with a Web Development certification from the University of Oklahoma
+          and Fullstack Academy. Currently, I’m pursuing a Bachelor of Science
+          in Cybersecurity at Southern Nazarene University, combining my passion
+          for development with a strong focus on security.
         </p>
       </div>
     </div>
